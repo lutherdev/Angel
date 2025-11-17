@@ -1,0 +1,420 @@
+CRITICAL - 2025-11-17 19:22:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "include\head_view.php"
+[Method: GET, Route: users/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('include\\head_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('include\\head_view', [], true)
+ 3 APPPATH\Controllers\Users.php(18): view('include\\head_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:22:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "include\head_view.php"
+[Method: GET, Route: users/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('include\\head_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('include\\head_view', [], true)
+ 3 APPPATH\Controllers\Users.php(18): view('include\\head_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:22:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "include\head_view.php"
+[Method: GET, Route: users/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('include\\head_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('include\\head_view', [], true)
+ 3 APPPATH\Controllers\Users.php(18): view('include\\head_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:22:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "include\head_view.php"
+[Method: GET, Route: users/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('include\\head_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('include\\head_view', [], true)
+ 3 APPPATH\Controllers\Users.php(18): view('include\\head_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:01 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:02 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:05 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:08 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:18 --> ErrorException: Undefined variable $data
+[Method: GET, Route: users/add]
+in APPPATH\Controllers\Users.php on line 18.
+ 1 APPPATH\Controllers\Users.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Angel\\app\\Controllers\\Users.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:18 --> ErrorException: Undefined variable $data
+[Method: GET, Route: users/add]
+in APPPATH\Controllers\Users.php on line 18.
+ 1 APPPATH\Controllers\Users.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Angel\\app\\Controllers\\Users.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:23 --> ErrorException: Undefined variable $data
+[Method: GET, Route: users/add]
+in APPPATH\Controllers\Users.php on line 18.
+ 1 APPPATH\Controllers\Users.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Angel\\app\\Controllers\\Users.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:49 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:50 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:23:50 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 53.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:04 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 49.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:04 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 49.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:04 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 49.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:11 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:11 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:11 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:18 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:19 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:27 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:24:28 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 42.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:25:20 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 27.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:26:08 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 27.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:26:29 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:26:30 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:26:30 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:26:30 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:27:22 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 19:28:21 --> Error: Undefined constant "test"
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 1.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 19:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-17 19:28:30 --> Error: Call to undefined function set_value()
+[Method: GET, Route: users/add]
+in APPPATH\Views\users_add.php on line 27.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('users_add', [], true)
+ 4 APPPATH\Controllers\Users.php(18): view('users_add')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Users->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 19:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 19:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 19:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -41,4 +41,12 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+      // Rules for signup
+    public array $signup = [
+        'username' => 'required|is_unique[tblusers.username]|alpha_numeric',
+        'password' => 'required|min_length[6]|max_length[16]',
+        'confirmpassword' => 'matches[password]',
+        'fullname' => 'required|alpha_space',
+        'email' => 'required|valid_email',
+    ];
 }
