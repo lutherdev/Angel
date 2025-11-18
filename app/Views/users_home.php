@@ -22,7 +22,14 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-
+            <!-- ADD ACTION BUTTONS (VIEW, EDIT, DELETE) -->
+            <div class="col-md-3"> 
+                <h2>DATABASE</h2>
+                <?="ID -- USERNAME -- FULL NAME"?>
+                <?php foreach ($users as $user): ?>
+                    <p><?= $user['id']; ?> - <?= $user['username']; ?> - <?= $user['fullname']; ?></p>
+                <?php endforeach; ?>
+            </div>
 
             <!-- INSERT -->
             <div class="col-md-3">
@@ -34,15 +41,7 @@
                 </a>
             </div>
 
-            <!-- TABLE FOR LIST OF USERS (SEARCHABLE AND PAGINATION, HAS ACTION BUTTONS (VIEW, EDIT, REMOVE)) -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('users/remove'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-danger">Remove</h4>
-                        <p class="text-muted">Remove Users</p>
-                    </div>
-                </a>
-            </div>
+        
         </div>
     </div>
 

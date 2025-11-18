@@ -6,7 +6,12 @@ class Equipments extends BaseController
 {
     public function index(): string
     {   
-        return view('equipments_home');
+        $eqpmodel = model('Equipments_model');
+        $data = array(
+            'title' => 'TW32 App - View User Record',
+            'equipments' => $eqpmodel->findAll()
+        );
+        return view('equipments_home', $data);
     }
 
     public function add() {
@@ -14,7 +19,6 @@ class Equipments extends BaseController
         // $data = array(
         //     'title' => 'TW32 App - Add New User',
         // );
-
         return view('equipments_add');
     }
 
@@ -27,15 +31,12 @@ class Equipments extends BaseController
         $validation = service('validation');
 
         $data = array (
-            'username' => $this->request->getPost('username'),
-            'password' => $this->request->getPost('password'),
-            'confirmpassword' => $this->request->getPost('confirmpassword'),
-            'fullname' => $this->request->getPost('fullname'),
-            'email' => $this->request->getPost('email'),
+            'name' => $this->request->getPost('name'),
+            'quantity' => $this->request->getPost('quantity'),
         );
 
         // Runs the validation
-        if(! $validation->run($data, 'signup')){
+        if(! $validation->run($data, 'eqpvalid')){
             // If validation fails, reload the form passing the error messages
             $data = array(
                 'title' => 'TW32 App - Add New User',
@@ -47,7 +48,7 @@ class Equipments extends BaseController
         }
 
         $usermodel->insert($data);
-        $session->setFlashData('success', 'Adding new user is successful.');
+        $session->setFlashData('success', 'Adding new equipment is successful.');
         return redirect()->to('equipments');
     }
 

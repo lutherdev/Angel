@@ -12,11 +12,8 @@ class Equipments_model extends Model {
     protected $returnType = 'array';
 
     protected $allowedFields = [
-        'username',
-        'password',
-        'fullname',
-        'email',
-        'datecreated'
+        'name',
+        'quantity'
     ];
 
     protected bool $allowEmptyInserts = false;

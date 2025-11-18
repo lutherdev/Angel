@@ -17,7 +17,7 @@
     <div class="container mt-5">
 
         <div class="text-center mb-4">
-            <h1 class="fw-bold">Welcome to User Manage</h1>
+            <h1 class="fw-bold">Welcome to Equipment Manage</h1>
             <p class="text-secondary">Choose a module to continue</p>
         </div>
 
@@ -25,36 +25,19 @@
 
     <h1>Add New User</h1>
 
-    <form action="<?= base_url('users/insert') ?>" method="post">
+    <form action="<?= base_url('equipments/insert') ?>" method="post">
         <div>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="" required>
+            <label for="username">Name:</label>
+            <input type="text" name="name" id="name" value="" required>
         </div>
 
         <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
+            <label for="password">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" required>
         </div>
 
-        <div>
-            <label for="confirmpassword">Confirm Password:</label>
-            <input type="password" name="confirmpassword" id="confirmpassword" required>
-        </div>
-
-        <div>
-            <label for="fullname">Full Name:</label>
-            <input type="text" name="fullname" id="fullname" value="" required>
-        </div>
-
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="" required>
-        </div>
-
-        <button type="submit">Add User</button>
+        <button type="submit">Add Equipment</button>
     </form>
-
-
         </div>
     </div>
 

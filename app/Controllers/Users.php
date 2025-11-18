@@ -6,7 +6,13 @@ class Users extends BaseController
 {
     public function index(): string
     {   
-        return view('users_home');
+        $usermodel = model('Users_model');
+
+        $data = array(
+            'title' => 'TW32 App - View User Record',
+            'users' => $usermodel->findAll()
+        );
+        return view('users_home', $data);
     }
 
     public function add() {
@@ -26,12 +32,12 @@ class Users extends BaseController
         // Creates and loads the Validation library
         $validation = service('validation');
 
-        $data = array (
+        $data = array ( //HASH THE PASSWORD
             'username' => $this->request->getPost('username'),
             'password' => $this->request->getPost('password'),
             'confirmpassword' => $this->request->getPost('confirmpassword'),
             'fullname' => $this->request->getPost('fullname'),
-            'email' => $this->request->getPost('email'),
+            //'email' => $this->request->getPost('email'),
         );
 
         // Runs the validation

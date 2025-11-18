@@ -22,11 +22,18 @@
         </div>
 
         <div class="row g-4 justify-content-center">
+            <!-- ADD ACTION BUTTONS (VIEW, EDIT, DELETE) -->
+            <div class="col-md-3"> 
+                <h2>DATABASE</h2>
+                <?="ID -- ITEM NAME -- QUANTITY"?>
+                <?php foreach ($equipments as $eqp): ?>
+                    <p><?= $eqp['id']; ?> - <?= $eqp['name']; ?> - <?= $eqp['quantity']; ?></p>
+                <?php endforeach; ?>
+            </div>
 
-
-            <!-- BORROW -->
+            <!-- ADD -->
             <div class="col-md-3">
-                <a href="<?php echo base_url('borrow'); ?>" class="text-decoration-none">
+                <a href="<?php echo base_url('equipments/add'); ?>" class="text-decoration-none">
                     <div class="card shadow-sm text-center p-4 h-100">
                         <h4 class="fw-bold text-warning">Add</h4>
                         <p class="text-muted">Borrow laptops, DLPs, cables & more</p>
