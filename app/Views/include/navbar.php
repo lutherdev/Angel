@@ -3,5 +3,10 @@
             <a class="navbar-brand fw-bold" href="<?=base_url('');?>">
                 ITSO Equipment System
             </a>
+
+<!-- REMOVE THE LOGOUT BUTTON WHEN USER NOT LOGGED IN-->
+            <a class="navbar-brand fw-bold" href="<?=base_url('auth/logout');?>">
+                LOGOUT
+            </a>
         </div>
     </nav>

@@ -18,7 +18,7 @@
 
         <div class="text-center mb-4">
             <h1 class="fw-bold">Welcome to ITSO Management Dashboard</h1>
-            <h3 class="fw-bold">Hi god</h3>
+            <h3 class="fw-bold">Hi Personnel</h3>
             <p class="text-secondary">Choose a module to continue</p>
         </div>
 
@@ -40,26 +40,6 @@
                     <div class="card shadow-sm text-center p-4 h-100">
                         <h4 class="fw-bold text-success">Item Management</h4>
                         <p class="text-muted">Add, edit, deactivate equipment</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- BORROW -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('borrow'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-warning">Borrow</h4>
-                        <p class="text-muted">Borrow laptops, DLPs, cables & more</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- RETURN -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('return'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-danger">Return</h4>
-                        <p class="text-muted">Return borrowed equipment</p>
                     </div>
                 </a>
             </div>

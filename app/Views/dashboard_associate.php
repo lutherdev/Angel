@@ -18,31 +18,11 @@
 
         <div class="text-center mb-4">
             <h1 class="fw-bold">Welcome to ITSO Management Dashboard</h1>
-            <h3 class="fw-bold">Hi god</h3>
+            <h3 class="fw-bold">Hi Associate</h3>
             <p class="text-secondary">Choose a module to continue</p>
         </div>
 
         <div class="row g-4 justify-content-center">
-
-            <!-- USER MANAGEMENT -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('users'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-primary">User Management</h4>
-                        <p class="text-muted">Register, edit, and manage user accounts</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- ITEM MANAGEMENT -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('equipments'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-success">Item Management</h4>
-                        <p class="text-muted">Add, edit, deactivate equipment</p>
-                    </div>
-                </a>
-            </div>
 
             <!-- BORROW -->
             <div class="col-md-3">
