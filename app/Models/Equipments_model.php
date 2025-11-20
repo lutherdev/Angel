@@ -14,7 +14,6 @@ class Equipments_model extends Model {
     protected $allowedFields = [
         'name',
         'description',
-        'category',
         'quantity',
         'avail_count',
         'status',

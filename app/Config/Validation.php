@@ -52,7 +52,8 @@ class Validation extends BaseConfig
 
       // Rules for equipments
     public array $eqpvalid = [
-        'name' => 'required',
-        'quantity' => 'required|alpha_numeric',
+        'name' => 'required|alpha_space',
+        'description' => 'required|alpha_space',
+        'quantity' => 'required|numeric',
     ];
 }
