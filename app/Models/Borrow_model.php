@@ -3,22 +3,21 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Equipments_model extends Model {
-    protected $table = 'tblequipments';
+class Borrow_model extends Model {
+    protected $table = 'tblborrow';
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'borrow_id';
     protected $useAutoIncrement = true;
 
     protected $returnType = 'array';
 
     protected $allowedFields = [
-        'name',
-        'description',
+        'user_id',
+        'equipment_id',
         'quantity',
-        'avail_count',
-        'status',
-        'created_at',
-        'updated_at'
+        'borrow_date',
+        'return_date',
+        'status'
     ];
 
     protected bool $allowEmptyInserts = false;

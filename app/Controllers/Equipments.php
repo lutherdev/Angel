@@ -15,86 +15,81 @@ class Equipments extends BaseController
     }
 
     public function add() {
-        // $session = session();
-        // $data = array(
-        //     'title' => 'TW32 App - Add New User',
-        // );
         return view('equipments_add');
     }
 
     public function insert() {
-        $usermodel = model('Equipments_model');
-        // Creates the session object
-        $session = session(); // $session = service('session');
-
-        // Creates and loads the Validation library
+        $eqpmodel = model('Equipments_model');
+        $session = session();
         $validation = service('validation');
 
         $data = array (
             'name' => $this->request->getPost('name'),
+            'description' => $this->request->getPost('description'),
             'quantity' => $this->request->getPost('quantity'),
+            'avail_count' => $this->request->getPost('quantity'),
+            'status' => 'available',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         );
 
-        // Runs the validation
         if(! $validation->run($data, 'eqpvalid')){
-            // If validation fails, reload the form passing the error messages
-            $data = array(
-                'title' => 'TW32 App - Add New User',
-                // 'errors' => $validation->getErrors()
-            );
-            // Set the flash data session item for the errors
-            $session->setFlashData('errors', $validation->getErrors());
+            $errors = implode('<br>', $validation->getErrors());
+            $session->setFlashData('errors', $errors);
             return redirect()->to('equipments/add');
         }
 
-        $usermodel->insert($data);
+        $eqpmodel->insert($data);
         $session->setFlashData('success', 'Adding new equipment is successful.');
         return redirect()->to('equipments');
     }
 
     public function view($id) {
-        $usermodel = model('Equipments_model');
+        $eqpmodel = model('Equipments_model');
 
         $data = array(
             'title' => 'TW32 App - View User Record',
-            'user' => $usermodel->find($id)
+            'equipments' => $eqpmodel->findAll()
         );
 
         return view('equipments_view', $data);
     }
 
     public function edit($id) {
-        $usermodel = model('Equipments_model');
+        $eqpmodel = model('Equipments_model');
         $session = session();
 
         $data = array(
-            'title' => 'TW32 App - View User Record',
-            'user' => $usermodel->find($id)
+            'title' => 'TW32 App - Edit User Record',
+            'equipments' => $eqpmodel->findAll()
         );
 
         return view('equipments_update', $data);
     }
 
     public function update($id) { //validation for inputs and flashdata set
-        $usermodel = model('Equipments_model');
+        $eqpmodel = model('Equipments_model');
         $session = session();
 
         $data = array (
-            'username' => $this->request->getPost('username'),
-            'password' => $this->request->getPost('password'),
-            'fullname' => $this->request->getPost('fullname'),
-            'email' => $this->request->getPost('email'),
+            'name' => $this->request->getPost('name'),
+            'description' => $this->request->getPost('description'),
+            'category' => $this->request->getPost('category'),
+            'quantity' => $this->request->getPost('quantity'),
+            'avail_count' => $this->request->getPost('avail_count'),
+            'status' => $this->request->getPost('status'),
+            'updated_at' => $this->request->getPost('updated_at')
         );
 
-        $usermodel->update($id, $data);
+        $eqpmodel->update($id, $data);
 
         return redirect()->to('equipments');
     }
 
     public function delete($id) { //modal for sureness
-        $usermodel = model('Equipments_model');
+        $eqpmodel = model('Equipments_model');
         $session = session();
-        $usermodel->delete($id);
+        $eqpmodel->delete($id);
         return redirect()->to('equipments');
     }
 }
