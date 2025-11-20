@@ -2,10 +2,11 @@
 # FRONTEND -- PAGINATION IS A MUST! // RESPONSIVE!
 
 # ACCOUNTS FOR VIEWS
-- Personnel = lut - Lut3
-- Associate = ford - Lut3
+- Personnel = lut - Lut3 /// CJ
+- Associate = ford - ford3 /// PING
+- god = god - god // LUTHER KIRK
 
-## DASHBOARD ASSOCIATES
+## DASHBOARD PERSONNEL
 ### USERS MANAGE
 - homepage/dashboard
 - table of all rows in database
@@ -16,7 +17,7 @@
 - table of all rows in database
 - add, view, update, remove (forms/buttons)
 
-## DASHBOARD PERSONNEL
+## DASHBOARD ASSOCIATES
 ### BORROW
 -- forms
 ### RETURN

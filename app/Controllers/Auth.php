@@ -12,43 +12,62 @@ class Auth extends BaseController
     public function login(){
         $usermodel = model('Users_model');
         $session = session();
-        
-
-        $user = $usermodel->where('username', $this->request->getPost('username'))->first();
-        //TODO: check if username exist first.
-        $password = $this->request->getPost('password');
-        $username = $this->request->getPost('username');
-            
-        $session->set('role', $user['role']);
-        
-        //TODO: add a redirect after checking password, username
-        //password compare to database
-        //TODO: Implement HASH PASSWORD!!
-        if($password == $user['password']){
-            return redirect()->to('dashboard');
+        //set other session details
+        $user = $usermodel->where('username', $this->request->getPost('username'))->first();  
+        if (!$user){
+            return redirect()->to('dashboard')->with('error', 'Invalid username or password.');
         }
-        return redirect()->to('dashboard');
+            $password = $this->request->getPost('password');
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        if ($password == $user['password']){
+            $session->set('role', $user['role']);
+            return redirect()->to('dashboard')->with('success', 'Invalid username or password.');
+        }
+        return redirect()->to('dashboard')->with('error', 'Invalid password.');
+    }
+
+    public function regview(){
+        return view('register');
     }
 
 
     public function register(){
         $usermodel = model('Users_model');
+        $session = session();
         //IMPLEMENT REGISTER AND FORM VALIDATION FOR IT!!
         //this is not the same as ADD USER ng personnel!
         $validation = service('validation');
-        //TODO: IMPLEMENT HASH PASSWORD BEFORE INSERTING
+
+        $dataToVal = array (
+            'username' => $this->request->getPost('username'),
+            'password' => $this->request->getPost('password'), PASSWORD_DEFAULT,
+            'email' => $this->request->getPost('email'),
+            'firstname' => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'lastname' => $this->request->getPost('lastname'),
+            'role' => $this->request->getPost('role'),
+            'status' => "Active"
+        );
+
         $data = array (
             'username' => $this->request->getPost('username'),
-            'fullname' => $this->request->getPost('fullname'),
-            'password' => $this->request->getPost('password')
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'email' => strtoupper($this->request->getPost('email')),
+            'first_name' => strtoupper($this->request->getPost('firstname')),
+            'middle_name' => strtoupper($this->request->getPost('middlename')),
+            'last_name' => strtoupper($this->request->getPost('lastname')),
+            'role' => strtoupper($this->request->getPost('role')),
+            'status' => "Active"
         );
-        if($validation->run($data, 'signup')){
-            $session->setFlashData('errors', $validation->getErrors());
-            return redirect()->to('users/add');
+        if(!$validation->run($dataToVal, 'signup')){
+            $errors = implode('<br>', $validation->getErrors());
+            $session->setFlashData('error', $errors);
+            return redirect()->to('register');
         }
         $usermodel->insert($data);
-        $session->setFlashData('success', 'Adding new user is successful.');
-        return redirect()->to('');
+        $session->setFlashData('success', 'Register Success.');
+        return redirect()->to('dashboard');
     }
 
     public function logout(){
