@@ -14,7 +14,7 @@ class Auth extends BaseController
         $session = session();
         
         $user = $usermodel->where('username', $this->request->getPost('username'))->first();
-
+       
         //TODO: Add error msg, for wrong user, user doesnt exist, password wrong,  
         if (!$user){
             return redirect()->to('dashboard');
