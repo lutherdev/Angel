@@ -2,8 +2,9 @@
 # FRONTEND -- PAGINATION IS A MUST! // RESPONSIVE!
 
 # ACCOUNTS FOR VIEWS
-- Personnel = lut - Lut3
-- Associate = ford - ford3
+- Personnel = lut - Lut3 /// CJ
+- Associate = ford - ford3 /// PING
+- god = god - god // LUTHER KIRK
 
 ## DASHBOARD PERSONNEL
 ### USERS MANAGE

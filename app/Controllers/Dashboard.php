@@ -13,7 +13,12 @@ class Dashboard extends BaseController
         } else if ($role == 'God'){
             return view('homepage');
         } else {
-            return redirect()->to('login');
+            if (session()->getFlashdata('error')) :
+            return redirect()->to('login')->with('error', session()->getFlashdata('error'));
+            elseif (session()->getFlashdata('success')) :
+            return redirect()->to('login')->with('success', session()->getFlashdata('success'));
+            else : return redirect()->to('login');
+            endif;            
         }
     }
 }
