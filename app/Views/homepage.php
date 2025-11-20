@@ -14,6 +14,11 @@
 
 <body class="bg-light">
 
+<?php if (session()->getFlashdata('success')) : ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('success') ?>
+    </div>
+<?php endif; ?>
     <div class="container mt-5">
 
         <div class="text-center mb-4">

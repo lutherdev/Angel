@@ -8,17 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ITSO Users Management System</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
-
     <div class="container mt-5">
-
         <div class="text-center mb-4">
-            <h1 class="fw-bold">ITSO Equipments</h1>
-            <p class="text-secondary">Please login</p>
+            <h1 class="fw-bold">REGISTER</h1>
+            <p class="text-secondary">Please fill in required details</p>
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('error') ?>
@@ -32,23 +29,35 @@
         </div>
 
         <div class="row g-4 justify-content-center">
+            <form action="<?= base_url('auth/register')?>" method="post" novalidate>
+                <label>Username: </label>
+                <input type="text" name="username" required>
 
-    <h1>LOGIN</h1>
+                <label>Password: </label>
+                <input type="password" name="password" required>
 
-    <form action="<?= base_url('auth/login') ?>" method="post">
-        <div>
-            <label for="username">Name:</label>
-            <input type="text" name="username" id="username" value="" required>
-        </div>
+                <label>Email: </label>
+                <input type="email" name="email" required>
 
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
-        </div>
+                <label>First Name: </label>
+                <input type="text" name="firstname" required>
 
-        <button type="submit">LOGIN</button>
-        <a href='<?= base_url('/register');?>'>REGISTER</a>
-    </form>
+                <label>Middle Name: </label>
+                <input type="text" name="middlename" required>
+
+                <label>Last Name: </label>
+                <input type="text" name="lastname" required>
+
+                <label>Role: </label>
+                <select name="role" required>
+                <option value="">Select role</option>
+                <option value="Personnel">Personnel</option>
+                <option value="Associate">Associate</option>
+                </select>
+
+                <button type="submit">Register</button>
+
+            </form>
         </div>
     </div>
 
