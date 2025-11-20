@@ -12,7 +12,7 @@ class Users extends BaseController
             'title' => 'TW32 App - View User Record',
             'users' => $usermodel->findAll()
         );
-        return view('users_home', $data);
+        return view('dashboard_personnel', $data);
     }
 
     // public function add() {
@@ -68,7 +68,7 @@ class Users extends BaseController
         $session = session();
 
         $data = array(
-            'title' => 'TW32 App - View User Record',
+            'title' => 'TW32 App - Edit User Record',
             'user' => $usermodel->find($id)
         );
 
@@ -83,7 +83,11 @@ class Users extends BaseController
         $data = array (
             'username' => $this->request->getPost('username'),
             'password' => $this->request->getPost('password'),
-            'fullname' => $this->request->getPost('fullname'),
+            'first_name' => $this->request->getPost('first_name'),
+            'middle_name' => $this->request->getPost('middle_name'),
+            'last_name' => $this->request->getPost('last_name'),
+            'role' => $this->request->getPost('role'),
+            'status' => $this->request->getPost('status'),
             'email' => $this->request->getPost('email'),
         );
 
