@@ -6,8 +6,17 @@ class Dashboard extends BaseController
 {
     public function index(){
         $role = session()->get('role'); 
+        $usermodel = model('Users_model');
+        $itemmodel = model('Equipments_model');
+
+        $data = array(
+            'title' => 'TW32 App - View User Record',
+            'users' => $usermodel->findAll(),
+            'items' => $itemmodel->findAll()
+        );
+
         if ($role == 'Personnel') {
-            return view('dashboard_personnel');
+            return view('dashboard_personnel', $data);
         } else if ($role == 'Associate') {
             return view('dashboard_associate');
         } else if ($role == 'God'){

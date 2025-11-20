@@ -38,3 +38,5 @@ $routes->get('/borrow', 'Equipments::borrowview');
 $routes->get('/return', 'Equipments::returnview');
 $routes->get('/reserve', 'Equipments::reserveview');
 
+$routes->get('users/edit/(:num)', 'Users::edit/$1');
+$routes->post('users/update/(:num)', 'Users::update/$1');
