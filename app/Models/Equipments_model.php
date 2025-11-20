@@ -13,7 +13,13 @@ class Equipments_model extends Model {
 
     protected $allowedFields = [
         'name',
-        'quantity'
+        'description',
+        'category',
+        'quantity',
+        'avail_count',
+        'status',
+        'created_at',
+        'updated_at'
     ];
 
     protected bool $allowEmptyInserts = false;
