@@ -6,31 +6,37 @@
 - Associate = ford - ford3 /// PING
 - god = god - god // LUTHER KIRK
 
-## DASHBOARD PERSONNEL
-### USERS MANAGE
+## DASHBOARD PERSONNEL (CJ)
+### USERS MANAGE TODO: DO ALL FORMS FIRST. PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
 - homepage/dashboard
 - table of all rows in database
 - add, view, update, remove (forms/buttons)
 
-### EQUIPMENT MANAGE
+### EQUIPMENT MANAGE  TODO: (RECHECK FOR NAVBAR COMPATIBILITY). DO ALL FORMS.
 - homepage/dashboard
 - table of all rows in database
 - add, view, update, remove (forms/buttons)
 
-## DASHBOARD ASSOCIATES
-### BORROW
+======================================================================================================================
+
+## DASHBOARD ASSOCIATES (PING)
+### BORROW TODO: DO ALL FORMS, PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
 -- forms
-### RETURN
+### RETURN TODO: DO ALL FORMS, PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
 -- forms
 
 # BACKEND ===================================================================
-1. Auth - luther
-2. Users - luther
-3. Equipments - Luther
+1. Auth - luther - login, register, logout
+2. Users - luther - create, update, read, delete, activate, deactivate
+8. PasswordController - luther - forgot, reset, update
+
+3. Equipments - Luther/Kirk - create, update, read, delete
+
 4. Borrow - CJ
 5. Return - KIRK
 6. Reservation - PING
 7. Dashboard - Luther
+
 
 ## AUTH
 ### LOGIN / REGISTER / RESET PASS

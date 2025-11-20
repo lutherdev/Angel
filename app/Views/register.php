@@ -1,6 +1,3 @@
-<?= $this->extend('layout/main') ?>
-
-<?= $this->section('content') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,4 +62,3 @@
 
 </body>
 </html>
-<?= $this->endSection() ?>
