@@ -13,20 +13,20 @@ class Auth extends BaseController
         $usermodel = model('Users_model');
         $session = session();
         
-
         $user = $usermodel->where('username', $this->request->getPost('username'))->first();
-        //TODO: check if username exist first.
-        $password = $this->request->getPost('password');
-        $username = $this->request->getPost('username');
-            
-        $session->set('role', $user['role']);
-        
-        //TODO: add a redirect after checking password, username
-        //password compare to database
-        //TODO: Implement HASH PASSWORD!!
-        if($password == $user['password']){
+
+        //TODO: Add error msg, for wrong user, user doesnt exist, password wrong,  
+        if (!$user){
             return redirect()->to('dashboard');
         }
+            //$username = $this->request->getPost('username');
+            //TODO: Implement HASH PASSWORD!!
+            $password = $this->request->getPost('password');
+        if ($password == $user['password']){
+            $session->set('role', $user['role']);
+            return redirect()->to('dashboard');
+        }
+        
         return redirect()->to('dashboard');
     }
 
