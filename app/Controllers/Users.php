@@ -82,7 +82,6 @@ class Users extends BaseController
 
         $data = array (
             'username' => $this->request->getPost('username'),
-            'password' => $this->request->getPost('password'),
             'first_name' => $this->request->getPost('first_name'),
             'middle_name' => $this->request->getPost('middle_name'),
             'last_name' => $this->request->getPost('last_name'),
