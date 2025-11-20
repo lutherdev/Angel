@@ -25,9 +25,9 @@
             <!-- ADD ACTION BUTTONS (VIEW, EDIT, DELETE) -->
             <div class="col-md-3"> 
                 <h2>DATABASE</h2>
-                <?="ID -- USERNAME -- FULL NAME"?>
+                <?="ID -- USERNAME -- FIRST NAME"?>
                 <?php foreach ($users as $user): ?>
-                    <p><?= $user['id']; ?> - <?= $user['username']; ?> - <?= $user['fullname']; ?></p>
+                    <p><?= $user['id']; ?> - <?= $user['username']; ?> - <?= $user['first_name']; ?></p>
                 <?php endforeach; ?>
             </div>
 
