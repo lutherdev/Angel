@@ -1,5 +1,4 @@
 <?= $this->extend('layout/main') ?>
-
 <?= $this->section('content') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,48 +6,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ITSO Equipment Management System</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="bg-light">
-
-    <div class="container mt-5">
-
-        <div class="text-center mb-4">
-            <h1 class="fw-bold">Welcome to ITSO Management Dashboard</h1>
-            <h3 class="fw-bold">Hi Personnel</h3>
-            <p class="text-secondary">Choose a module to continue</p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-
-            <!-- USER MANAGEMENT -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('users'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-primary">User Management</h4>
-                        <p class="text-muted">Register, edit, and manage user accounts</p>
-                    </div>
-                </a>
+<body class="bg-gray-100">
+    <!-- Main Content Area -->
+    <main class="flex-1 p-8">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Personnel Database</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">ID</th>
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">Username</th>
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">Full Name</th>
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50">
+                            <td class="py-3 px-4">1</td>
+                            <td class="py-3 px-4">notch</td>
+                            <td class="py-3 px-4">Notch god</td>
+                            <td class="py-3 px-4">notch@example.com</td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <!-- View Button -->
+                                    <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded transition-colors" title="View">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                    </button>
+                                    <!-- Edit Button -->
+                                    <button onclick="window.location.href='<?php echo('/app/Views/users_update.php'); ?> + '1'" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded transition-colors" title="Edit">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                        </svg>
+                                    </button>
+                                    <!-- Delete Button -->
+                                    <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded transition-colors" title="Delete">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50">
+                            <td class="py-3 px-4">2</td>
+                            <td class="py-3 px-4">lut</td>
+                            <td class="py-3 px-4">luther dean</td>
+                            <td class="py-3 px-4">lut@example.com</td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded transition-colors" title="View">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded transition-colors" title="Edit">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded transition-colors" title="Delete">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50">
+                            <td class="py-3 px-4">3</td>
+                            <td class="py-3 px-4">ford</td>
+                            <td class="py-3 px-4">ford dean</td>
+                            <td class="py-3 px-4">ford@example.com</td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded transition-colors" title="View">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded transition-colors" title="Edit">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded transition-colors" title="Delete">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <!-- ITEM MANAGEMENT -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('equipments'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-success">Item Management</h4>
-                        <p class="text-muted">Add, edit, deactivate equipment</p>
-                    </div>
-                </a>
-            </div>
-
         </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    </main>
 </body>
 </html>
 <?= $this->endSection() ?>
