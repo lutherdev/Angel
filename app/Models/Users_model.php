@@ -14,10 +14,14 @@ class Users_model extends Model {
     protected $allowedFields = [
         'username',
         'password',
-        'fullname',
         'email',
+        'first_name',
+        'middle_name',
+        'last_name',
         'role',
-        'datecreated'
+        'status',
+        'created_at',
+        'updated_at'
     ];
 
     protected bool $allowEmptyInserts = false;
