@@ -5,57 +5,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITSO Equipment Management System</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-
-<body class="bg-light">
-
-    <div class="container mt-5">
-
-        <div class="text-center mb-4">
-            <h1 class="fw-bold">Welcome to Equipments Manage</h1>
-            <p class="text-secondary">Choose a module to continue</p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <!-- ADD ACTION BUTTONS (VIEW, EDIT, DELETE) -->
-            <div class="col-md-3"> 
-                <h2>DATABASE</h2>
-                <?="ID -- ITEM NAME -- QUANTITY"?>
-                <?php foreach ($equipments as $eqp): ?>
-                    <p><?= $eqp['id']; ?> - <?= $eqp['name']; ?> - <?= $eqp['quantity']; ?></p>
-                <?php endforeach; ?>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Welcome to Equipment Management</h1>
+        </section>
+        <!-- Dashboard Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Database Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="bg-yellow-500 p-4 text-white">
+                    <h2 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-database mr-2"></i>
+                        EQUIPMENT DATABASE
+                    </h2>
+                </div>
+                <div class="p-4">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="py-2 px-3 text-left">ID</th>
+                                    <th class="py-2 px-3 text-left">ITEM NAME</th>
+                                    <th class="py-2 px-3 text-left">QUANTITY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($equipments as $eqp): ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-3"><?= $eqp['id']; ?></td>
+                                    <td class="py-2 px-3"><?= $eqp['name']; ?></td>
+                                    <td class="py-2 px-3"><?= $eqp['quantity']; ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
-            <!-- ADD -->
-            <div class="col-md-3">
+            <!-- Add Equipment Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
                 <a href="<?php echo base_url('equipments/add'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-warning">Add</h4>
-                        <p class="text-muted">Borrow laptops, DLPs, cables & more</p>
+                    <div class="bg-green-800 p-4 text-white">
+                        <h2 class="text-xl font-bold flex items-center">
+                            <i class="fas fa-plus-circle mr-2"></i>
+                            ADD EQUIPMENT
+                        </h2>
+                    </div>
+                    <div class="p-6 flex flex-col items-center text-center h-full">
+                        <div class="bg-green-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-laptop text-green-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Add Equipment</h3>
+                        <p class="text-gray-600 mb-6">Borrow laptops, DLPs, cables & more</p>
+                        <div class="mt-auto bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-plus mr-2"></i>
+                            Add
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <!-- RETURN -->
-            <div class="col-md-3">
-                <a href="<?php echo base_url('return'); ?>" class="text-decoration-none">
-                    <div class="card shadow-sm text-center p-4 h-100">
-                        <h4 class="fw-bold text-danger">Remove</h4>
-                        <p class="text-muted">Return borrowed equipment</p>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="<?php echo base_url('equipments/remove'); ?>" class="text-decoration-none">
+                    <div class="bg-red-600 p-4 text-white">
+                        <h2 class="text-xl font-bold flex items-center">
+                            <i class="fas fa-minus-circle mr-2"></i>
+                            REMOVE EQUIPMENT
+                        </h2>
+                    </div>
+                    <div class="p-6 flex flex-col items-center text-center h-full">
+                        <div class="bg-red-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-undo-alt text-red-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Remove</h3>
+                        <p class="text-gray-600 mb-6">Return borrowed equipment</p>
+                        <div class="mt-auto bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-undo-alt mr-2"></i>
+                            Remove
+                        </div>
                     </div>
                 </a>
             </div>
-
         </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    </main>
 </body>
 </html>
 <?= $this->endSection() ?>
