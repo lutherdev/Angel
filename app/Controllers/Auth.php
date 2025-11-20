@@ -38,9 +38,9 @@ class Auth extends BaseController
         $validation = service('validation');
         //TODO: IMPLEMENT HASH PASSWORD BEFORE INSERTING
         $data = array (
-            'username' = $this->request->getPost('username'),
-            'fullname' = $this->request->getPost('fullname'),
-            'password' = $this->request->getPost('password');
+            'username' => $this->request->getPost('username'),
+            'fullname' => $this->request->getPost('fullname'),
+            'password' => $this->request->getPost('password')
         );
         if($validation->run($data, 'signup')){
             $session->setFlashData('errors', $validation->getErrors());
