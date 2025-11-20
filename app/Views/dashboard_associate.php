@@ -19,12 +19,10 @@
         <div class="text-center mb-4">
             <h1 class="fw-bold">Welcome to ITSO Management Dashboard</h1>
             <h3 class="fw-bold">Hi Associate</h3>
-            <p class="text-secondary">Choose a module to continue</p>
         </div>
 
         <div class="row g-4 justify-content-center">
 
-            <!-- BORROW -->
             <div class="col-md-3">
                 <a href="<?php echo base_url('borrow'); ?>" class="text-decoration-none">
                     <div class="card shadow-sm text-center p-4 h-100">
@@ -34,12 +32,20 @@
                 </a>
             </div>
 
-            <!-- RETURN -->
             <div class="col-md-3">
                 <a href="<?php echo base_url('return'); ?>" class="text-decoration-none">
                     <div class="card shadow-sm text-center p-4 h-100">
                         <h4 class="fw-bold text-danger">Return</h4>
                         <p class="text-muted">Return borrowed equipment</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a href="<?php echo base_url('reserve'); ?>" class="text-decoration-none">
+                    <div class="card shadow-sm text-center p-4 h-100">
+                        <h4 class="fw-bold text-danger">Reservation</h4>
+                        <p class="text-muted">Reserve Equipments</p>
                     </div>
                 </a>
             </div>

@@ -92,4 +92,17 @@ class Equipments extends BaseController
         $eqpmodel->delete($id);
         return redirect()->to('equipments');
     }
+
+
+    public function borrowview(){
+        return view('equipments_borrow');
+    }
+
+    public function returnview(){
+        return view("equipments_return");
+    }
+
+    public function reserveview(){
+        return view('equipments_reserve');
+    }
 }

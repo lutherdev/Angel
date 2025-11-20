@@ -34,4 +34,7 @@ $routes->post('/equipments/insert', 'Equipments::insert');
 
 $routes->get('/borrowItem', 'Equipments::index');
 $routes->get('/returnItem', 'Equipments::index');
+$routes->get('/borrow', 'Equipments::borrowview');
+$routes->get('/return', 'Equipments::returnview');
+$routes->get('/reserve', 'Equipments::reserveview');
 
