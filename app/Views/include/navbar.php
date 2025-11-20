@@ -25,30 +25,32 @@
             </div>
             
             <!-- Navigation Links -->
+<?php 
+$staticPersonnel = ['dashboard', 'users', 'equipments'];
+$staticAssociate = ['dashboard', 'borrow', 'return', 'reserve'];
+$session = session();
+?>
 <ul class="space-y-2">
+    <?php if ($session->get('role') == 'Personnel'): ?>
+        <?php foreach ($staticPersonnel as $stP) : ?>
     <li class="w-full">
-        <a href="<?= base_url('dashboard')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>Dashboard</span>
+        <a href="<?= base_url($stP)?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
+            <span><?=strtoupper($stP) ?></span>
         </a>
     </li>
-    <li class="w-full">
-        <a href="<?= base_url('users')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>User Management</span>
-        </a>
-    </li>
-    <li class="w-full">
-        <a href="<?= base_url('equipments')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>Equipment Management</span>
-        </a>
-    </li>
-    <li class="w-full">
-        <a href="#" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>About Us</span>
-        </a>
-    </li>
+        <?php endforeach; ?>
+        <?php elseif ($session->get('role') == 'Associate'): ?>
+            <?php foreach ($staticAssociate as $stA) : ?>
+        <li class="w-full">
+            <a href="<?= base_url($stA)?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
+                <span><?=strtoupper($stA) ?></span>
+            </a>
+        </li>
+            <?php endforeach; ?>
+    <?php endif; ?>
     <li class="w-full">
         <a href="<?= base_url('auth/logout')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>Logout</span>
+            <span>LOGOUT</span>
         </a>
     </li>
 </ul>

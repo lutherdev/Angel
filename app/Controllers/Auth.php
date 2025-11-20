@@ -15,7 +15,7 @@ class Auth extends BaseController
         //set other session details
         $user = $usermodel->where('username', $this->request->getPost('username'))->first();  
         if (!$user){
-            return redirect()->to('dashboard')->with('error', 'Invalid username or password.');
+            return redirect()->to('dashboard')->with('error', 'Invalid username');
         }
             $password = $this->request->getPost('password');
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
