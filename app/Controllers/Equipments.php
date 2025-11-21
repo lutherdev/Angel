@@ -49,7 +49,7 @@ class Equipments extends BaseController
 
         $data = array(
             'title' => 'TW32 App - View User Record',
-            'equipments' => $eqpmodel->findAll()
+            'equipment' => $eqpmodel->find($id)
         );
 
         return view('equipments_view', $data);
@@ -60,14 +60,14 @@ class Equipments extends BaseController
         $session = session();
 
         $data = array(
-            'title' => 'TW32 App - Edit User Record',
-            'equipments' => $eqpmodel->findAll()
+            'title' => 'TW32 App - Edit Equipment Record',
+            'equipment' => $eqpmodel->find($id)
         );
 
         return view('equipments_update', $data);
     }
 
-    public function update($id) { //validation for inputs and flashdata set
+    public function update($id) {
         $eqpmodel = model('Equipments_model');
         $session = session();
 
@@ -78,11 +78,11 @@ class Equipments extends BaseController
             'quantity' => $this->request->getPost('quantity'),
             'avail_count' => $this->request->getPost('avail_count'),
             'status' => $this->request->getPost('status'),
-            'updated_at' => $this->request->getPost('updated_at')
+            'updated_at' => date('Y-m-d H:i:s')
         );
 
         $eqpmodel->update($id, $data);
-
+        $session->setFlashData('success', 'Equipment updated successfully.');
         return redirect()->to('equipments');
     }
 
