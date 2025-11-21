@@ -14,7 +14,7 @@ class Users extends BaseController
             'users' => $usermodel->findAll(),
             'equipments' => $eqpmodel->findAll()
         );
-        return view('dashboard_personnel', $data);
+        return view('users_home', $data);
     }
 
     // public function add() {

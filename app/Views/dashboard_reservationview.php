@@ -24,7 +24,7 @@
 
         <div class="max-w-2xl mx-auto">
             <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="bg-green-600 p-4 text-white">
+                <div class="bg-gradient-to-b from-green-900 to-yellow-500 p-4 text-white">
                     <h2 class="text-xl font-bold flex items-center">
                         <i class="fas fa-eye mr-2"></i>
                         RESERVATION DETAILS
@@ -73,11 +73,11 @@
                     </div>
                     
                     <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-                        <a href="<?= base_url('/reservations') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
+                        <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
                             <i class="fas fa-arrow-left mr-2"></i>
                             Back
                         </a>
-                        <a href="<?= base_url('/reservations/edit/R001') ?>" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg">
+                        <a href="<?= base_url('reservation/edit/1') ?>" class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg">
                             <i class="fas fa-edit mr-2"></i>
                             Edit Reservation
                         </a>

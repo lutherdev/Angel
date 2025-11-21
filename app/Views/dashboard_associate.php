@@ -86,24 +86,26 @@
                                     <td class="py-4 px-4">
                                         <div class="flex space-x-2">
 
-                                            <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="View Details"
-                                                    onclick="window.location.href='<?= base_url('reservation/view/' . $reservation['reservation_id']); ?>">
-                                                <i class="fas fa-eye w-4 h-4"></i>
-                                                
-                                            </button>
+                                            <a href="<?= base_url('reservation/view/' . $reservation['reservation_id']); ?>"
+                                                class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-eye w-4 h-4"></i>
+                                                </a>
+
                                             
-                                            <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="Edit Reservation"
-                                                    onclick="window.location.href='<?= base_url('reservation/edit/' . $reservation['reservation_id']); ?>">
-                                                <i class="fas fa-edit w-4 h-4"></i>
-                                            </button>
+                                            <a href="<?= base_url('reservation/edit/' . $reservation['reservation_id']); ?>"
+                                                class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-edit w-4 h-4"></i>
+                                                </a>
+
                                             
-                                            <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="Delete Reservation"
-                                                    onclick="window.location.href='<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>">
-                                                <i class="fas fa-trash w-4 h-4"></i>
-                                            </button>
+                                            <a href="<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>"
+                                                class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-trash w-4 h-4"></i>
+                                                </a>
+
                                         </div>
                                     </td>
                                 </tr>
@@ -173,24 +175,24 @@
                                     </td>
                                     <td class="py-4 px-4">
                                         <div class="flex space-x-2">
-                                            <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="View Borrower"
-                                                    onclick="window.location.href='<?= base_url('borrow/view/' . $borrower['borrow_id']); ?>">
-            
-                                                <i class="fas fa-eye w-4 h-4"></i>
-                                            </button>
+                                            <a href="<?= base_url('borrow/view/' . $borrower['borrow_id']); ?>"
+                                                class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-eye w-4 h-4"></i>
+                                                </a>
+
                                             
-                                            <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="Update Borrower"
-                                                    onclick="window.location.href='<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>">
-                                                <i class="fas fa-edit w-4 h-4"></i>
-                                            </button>
+                                            <a href="<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>"
+                                                class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-edit w-4 h-4"></i>
+                                                </a>
                                             
-                                            <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200" 
-                                                    title="Delete Borrower"
-                                                    onclick="window.location.href='<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>">
-                                                <i class="fas fa-trash w-4 h-4"></i>
-                                            </button>
+                                            <a href="<?= base_url('borrow/delete/' . $borrower['borrow_id']); ?>"
+                                                class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="View Details">
+                                                    <i class="fas fa-trash w-4 h-4"></i>
+                                                </a>
                                         </div>
                                     </td>
                                 </tr>
