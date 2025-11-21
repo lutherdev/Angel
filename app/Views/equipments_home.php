@@ -27,8 +27,9 @@
         <section class="text-center mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Welcome to Equipment Management</h1>
         </section>
+        
         <!-- Dashboard Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <!-- Database Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden">
                 <div class="bg-yellow-500 p-4 text-white">
@@ -84,23 +85,45 @@
                 </a>
             </div>
 
+            <!-- Activate Equipment Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('equipments/remove'); ?>" class="text-decoration-none">
-                    <div class="bg-red-600 p-4 text-white">
+                <a href="<?php echo base_url('equipments/activate'); ?>" class="text-decoration-none">
+                    <div class="bg-blue-600 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
-                            <i class="fas fa-minus-circle mr-2"></i>
-                            REMOVE EQUIPMENT
+                            <i class="fas fa-power-off mr-2"></i>
+                            ACTIVATE EQUIPMENT
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-red-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-undo-alt text-red-600 text-3xl"></i>
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-toggle-on text-blue-600 text-3xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Remove</h3>
-                        <p class="text-gray-600 mb-6">Return borrowed equipment</p>
-                        <div class="mt-auto bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
-                            <i class="fas fa-undo-alt mr-2"></i>
-                            Remove
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate</h3>
+                        <div class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-toggle-on mr-2"></i>
+                            Activate
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Deactivate Equipment Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="<?php echo base_url('equipments/deactivate'); ?>" class="text-decoration-none">
+                    <div class="bg-orange-600 p-4 text-white">
+                        <h2 class="text-xl font-bold flex items-center">
+                            <i class="fas fa-ban mr-2"></i>
+                            DEACTIVATE EQUIPMENT
+                        </h2>
+                    </div>
+                    <div class="p-6 flex flex-col items-center text-center h-full">
+                        <div class="bg-orange-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-toggle-off text-orange-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Deactivate</h3>
+                        <div class="mt-auto bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-toggle-off mr-2"></i>
+                            Deactivate
                         </div>
                     </div>
                 </a>

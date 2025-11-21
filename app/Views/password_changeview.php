@@ -17,7 +17,7 @@
   <body class="min-h-screen bg-gray-50">
     <main class="container mx-auto px-4 py-8">
       <section class="mb-8 text-center">
-        <h1 class="mb-2 text-3xl font-bold text-gray-800 md:text-4xl">Reset Password</h1>
+        <h1 class="mb-2 text-3xl font-bold text-gray-800 md:text-4xl">Change Password</h1>
         <p class="text-lg text-gray-600">Update user password</p>
       </section>
 
@@ -26,12 +26,17 @@
           <div class="bg-gradient-to-b from-green-900 to-yellow-500 p-4 text-white">
             <h2 class="flex items-center text-xl font-bold">
               <i class="fas fa-key mr-2"></i>
-              RESET PASSWORD
+              CHANGE PASSWORD
             </h2>
           </div>
 
           <div class="p-6">
             <form>
+              <div class="mb-6">
+                <label for="current_password" class="mb-2 block text-sm font-medium text-gray-700"> <i class="fas fa-lock mr-2 text-green-600"></i>Current Password </label>
+                <input type="password" name="current_password" id="current_password" required class="w-full rounded-lg border border-gray-300 px-4 py-3 transition duration-200 focus:border-transparent focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="Enter current password" />
+              </div>
+
               <div class="mb-6">
                 <label for="new_password" class="mb-2 block text-sm font-medium text-gray-700"> <i class="fas fa-lock mr-2 text-green-600"></i>New Password </label>
                 <input type="password" name="new_password" id="new_password" required class="w-full rounded-lg border border-gray-300 px-4 py-3 transition duration-200 focus:border-transparent focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="Enter new password" />
@@ -49,7 +54,7 @@
                 </a>
                 <button type="button" class="flex items-center rounded-lg bg-green-600 px-6 py-3 font-medium text-white shadow-md transition duration-200 hover:bg-yellow-500 hover:shadow-lg" onclick="alert('Password reset successfully!')">
                   <i class="fas fa-sync-alt mr-2"></i>
-                  Reset Password
+                  Change Password
                 </button>
               </div>
             </form>
