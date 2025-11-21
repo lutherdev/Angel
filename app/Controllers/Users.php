@@ -12,7 +12,7 @@ class Users extends BaseController
             'title' => 'TW32 App - View User Record',
             'users' => $usermodel->findAll()
         );
-        return view('dashboard_personnel', $data);
+        return view('users_home', $data);
     }
 
     // public function add() {
