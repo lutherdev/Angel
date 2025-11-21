@@ -72,21 +72,7 @@
                                 min="<?= date('Y-m-d') ?>"
                             >
                         </div>
-                        <div class="mb-8">
-                            <label for="valid_until" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-clock mr-2 text-purple-600"></i>Valid Until
-                            </label>
-                            <input 
-                                type="date" 
-                                name="valid_until" 
-                                id="valid_until" 
-                                required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
-                                value="<?= date('Y-m-d', strtotime('+7 days')) ?>"
-                                min="<?= date('Y-m-d', strtotime('+1 day')) ?>"
-                            >
-                        </div>
-
+                        
                         <div class="flex justify-between items-center">
                             <a href="<?= base_url('/') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
                                 <i class="fas fa-arrow-left mr-2"></i>
