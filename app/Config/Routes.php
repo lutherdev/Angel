@@ -26,17 +26,14 @@ $routes->get('users/edit/(:num)', 'Users::edit/$1');//view
 $routes->post('users/update/(:num)', 'Users::update/$1'); //not view
 $routes->get('users/delete/(:num)', 'Users::delete/$1');//view
 
-<<<<<<< HEAD
 $routes->get('/equipments', 'Equipments::index');
 $routes->get('/equipments/add', 'Equipments::add');
 $routes->post('/equipments/insert', 'Equipments::insert');
 $routes->get('equipments/view/(:num)', 'Equipments::view/$1');
 $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
-=======
 $routes->get('/equipments', 'Equipments::index'); //view
 $routes->get('/equipments/add', 'Equipments::add'); //view
 $routes->post('/equipments/insert', 'Equipments::insert'); //not view
->>>>>>> origin/main
 
 $routes->get('/reservation/view', 'Reservation::view');
 $routes->get('/reservation/edit', 'Reservation::edit');
@@ -55,13 +52,10 @@ $routes->get('/borrow', 'Equipments::borrowview');
 $routes->get('/return', 'Equipments::returnview');
 $routes->get('/reserve', 'Equipments::reserveview');
 
-<<<<<<< HEAD
 $routes->get('users/edit/(:num)', 'Users::edit/$1');
 $routes->post('users/update/(:num)', 'Users::update/$1');
 
 $routes->get('equipments/edit/(:num)', 'Equipments::edit/$1');
 $routes->post('equipments/update/(:num)', 'Equipments::update/$1');
-=======
 
 
->>>>>>> origin/main
