@@ -6,24 +6,41 @@
 - Associate = ford - ford3 /// PING
 - god = god - god // LUTHER KIRK
 
-## DASHBOARD PERSONNEL (CJ)
-### USERS MANAGE TODO: DO ALL FORMS FIRST. PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
-- homepage/dashboard
-- table of all rows in database
-- add, view, update, remove (forms/buttons)
+## NAVBAR
+-- fix javascript, highlight button based on url
 
-### EQUIPMENT MANAGE  TODO: (RECHECK FOR NAVBAR COMPATIBILITY). DO ALL FORMS.
-- homepage/dashboard
-- table of all rows in database
-- add, view, update, remove (forms/buttons)
+## DASHBOARD PERSONNEL (CJ)
+### USERS MANAGE TODO: 
+- homepage/dashboard - table view ng equipments, users = add, view, update, remove (forms/buttons)
+- users - change pass, activate account, deact account 
+--- then ung view page ng change pass and new password field, 
+--- tsaka view page ng activate, deactivate parang form nalang siguro, input sinong user then pili either activate or deactivate, confirm with password
+
+### EQUIPMENT MANAGE  TODO: 
+- equipments - add item, activate/deact item
+--- view form ng add item (meron na ata), so activate and deact 
+- logout
+
+# views needed
+1. update dashboard - table for both users and equipment
+2. users page - button for change pass, activate/deact
+-- view page form for activate, deact and change pass
+3. equipment page - button for add item, activate/deact
+-- view page form for add and activate/deact
 
 ======================================================================================================================
 
-## DASHBOARD ASSOCIATES (PING)
-### BORROW TODO: DO ALL FORMS, PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
--- forms
-### RETURN TODO: DO ALL FORMS, PUSH PULL REQUEST. THEN DESIGN PUSH LATER.
--- forms
+## DASHBOARD ASSOCIATES (PING) TODO:
+- homepage/dashboard - table view ng reservations, borrowers = add, view, update, remove (forms/buttons)
+- borrow - add equipment id field
+- return - 
+- reservation - tanggalin valid until sa form
+
+# views needed
+1. dashboard - add table view for borrowers
+2. borrow - add equipment id field
+3. reservation - tangallin valid until sa form
+
 
 # BACKEND ===================================================================
 1. Auth - luther - login, register, logout
