@@ -7,10 +7,12 @@ class Users extends BaseController
     public function index(): string
     {   
         $usermodel = model('Users_model');
+        $eqpmodel = model('Equipments_model');
 
         $data = array(
-            'title' => 'TW32 App - View User Record',
-            'users' => $usermodel->findAll()
+            'title' => 'TW32 App - Dashboard',
+            'users' => $usermodel->findAll(),
+            'equipments' => $eqpmodel->findAll()
         );
         return view('dashboard_personnel', $data);
     }
