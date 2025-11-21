@@ -1,5 +1,4 @@
-<?= $this->extend('layout/main') ?>
-<?= $this->section('content') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +27,12 @@
  p-4 text-white">
                     <h2 class="text-xl font-bold flex items-center">
                         <i class="fas fa-key mr-2"></i>
-                        RESET PASSWORD
+                        FORGET PASSWORD
                     </h2>
                 </div>
                 
                 <div class="p-6">
-                    <form action="<?= base_url('auth/forgot_password') ?>" method="POST">
+                    <form action="<?= base_url('password/forget') ?>" method="POST">
                         <div class="mb-8">
                             <label for="email" class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-envelope mr-2 text-green-600"></i>Email Address
@@ -108,4 +107,3 @@
     </script>
 </body>
 </html>
-<?= $this->endSection() ?>

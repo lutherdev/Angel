@@ -65,7 +65,7 @@
 
             <!-- Change Password Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('users/change-password'); ?>" class="text-decoration-none">
+                <a href="<?php echo base_url('/change'); ?>" class="text-decoration-none">
                     <div class="bg-blue-600 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-key mr-2"></i>

@@ -90,7 +90,13 @@
                         class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center transition duration-200"
                     >
                         <i class="fas fa-user-plus mr-2"></i>
-                        Don't have an account? REGISTER
+                        REGISTER
+                    </a>
+                    <a 
+                        href='<?= base_url('forget');?>' 
+                        class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center transition duration-200"
+                    >
+                        Forgot Password
                     </a>
                 </div>
             </form>

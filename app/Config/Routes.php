@@ -26,9 +26,6 @@ $routes->get('users/edit/(:num)', 'Users::edit/$1');//view
 $routes->post('users/update/(:num)', 'Users::update/$1'); //not view
 $routes->get('users/delete/(:num)', 'Users::delete/$1');//view
 
-$routes->get('/equipments', 'Equipments::index');
-$routes->get('/equipments/add', 'Equipments::add');
-$routes->post('/equipments/insert', 'Equipments::insert');
 $routes->get('equipments/view/(:num)', 'Equipments::view/$1');
 $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
 $routes->get('/equipments', 'Equipments::index'); //view
@@ -39,23 +36,27 @@ $routes->get('/reservation/view', 'Reservation::view');
 $routes->get('/reservation/edit', 'Reservation::edit');
 $routes->get('/reservation/view/(:num)', 'Reservation::view/$1');
 $routes->get('/reservation/edit/(:num)', 'Reservation::edit/$1');
+$routes->get('equipments/edit/(:num)', 'Equipments::edit/$1');
+$routes->post('equipments/update/(:num)', 'Equipments::update/$1');
+
 
 $routes->get('/borrow/view', 'Borrow::view');
 $routes->get('/borrow/edit', 'Borrow::edit');
 $routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
 $routes->get('/borrow/edit/(:num)', 'Borrow::edit/$1');
 
-
-$routes->get('/borrowItem', 'Equipments::index');
-$routes->get('/returnItem', 'Equipments::index');
 $routes->get('/borrow', 'Equipments::borrowview');
 $routes->get('/return', 'Equipments::returnview');
 $routes->get('/reserve', 'Equipments::reserveview');
 
-$routes->get('users/edit/(:num)', 'Users::edit/$1');
-$routes->post('users/update/(:num)', 'Users::update/$1');
 
-$routes->get('equipments/edit/(:num)', 'Equipments::edit/$1');
-$routes->post('equipments/update/(:num)', 'Equipments::update/$1');
+$routes->get('forget', 'Password::forgetview');
+$routes->post('password/forget', 'Password::forgetview');    
+$routes->get('reset', 'Password::resetview');
+$routes->post('password/reset', 'Password::reset');
+$routes->get('change', 'Password::changeview');
+$routes->post('password/change', 'Password::change');
+
+
 
 

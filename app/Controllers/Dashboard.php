@@ -12,7 +12,7 @@ class Dashboard extends BaseController
         $data = array(
             'title' => 'TW32 App - View User Record',
             'users' => $usermodel->findAll(),
-            'items' => $itemmodel->findAll()
+            'equipments' => $itemmodel->findAll()
         );
 
         $reservationmodel = model('Reservation_model');
