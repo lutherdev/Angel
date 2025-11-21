@@ -35,6 +35,11 @@ $routes->get('/reservation/edit', 'Reservation::edit');
 $routes->get('/reservation/view/(:num)', 'Reservation::view/$1');
 $routes->get('/reservation/edit/(:num)', 'Reservation::edit/$1');
 
+$routes->get('/borrow/view', 'Borrow::view');
+$routes->get('/borrow/edit', 'Borrow::edit');
+$routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
+$routes->get('/borrow/edit/(:num)', 'Borrow::edit/$1');
+
 
 $routes->get('/borrowItem', 'Equipments::index');
 $routes->get('/returnItem', 'Equipments::index');
