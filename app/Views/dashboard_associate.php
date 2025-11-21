@@ -88,19 +88,20 @@
 
                                             <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="View Details"
-                                                    onclick="viewReservation(<?= $reservation['reservation_id'] // add base url link stuff // ?>)">
+                                                    onclick="window.location.href='<?= base_url('reservation/view/' . $reservation['reservation_id']); ?>">
                                                 <i class="fas fa-eye w-4 h-4"></i>
+                                                
                                             </button>
                                             
                                             <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="Edit Reservation"
-                                                    onclick="editReservation(<?= $reservation['reservation_id'] ?>)">
+                                                    onclick="window.location.href='<?= base_url('reservation/edit/' . $reservation['reservation_id']); ?>">
                                                 <i class="fas fa-edit w-4 h-4"></i>
                                             </button>
                                             
                                             <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="Delete Reservation"
-                                                    onclick="deleteReservation(<?= $reservation['reservation_id'] ?>)">
+                                                    onclick="window.location.href='<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>">
                                                 <i class="fas fa-trash w-4 h-4"></i>
                                             </button>
                                         </div>
@@ -174,19 +175,20 @@
                                         <div class="flex space-x-2">
                                             <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="View Borrower"
-                                                    onclick="viewBorrower(<?= $borrower['user_id'] ?>)">
+                                                    onclick="window.location.href='<?= base_url('borrow/view/' . $borrower['borrow_id']); ?>">
+            
                                                 <i class="fas fa-eye w-4 h-4"></i>
                                             </button>
                                             
                                             <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="Update Borrower"
-                                                    onclick="updateBorrower(<?= $borrower['user_id'] ?>)">
+                                                    onclick="window.location.href='<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>">
                                                 <i class="fas fa-edit w-4 h-4"></i>
                                             </button>
                                             
                                             <button class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="Delete Borrower"
-                                                    onclick="deleteBorrower(<?= $borrower['user_id'] ?>)">
+                                                    onclick="window.location.href='<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>">
                                                 <i class="fas fa-trash w-4 h-4"></i>
                                             </button>
                                         </div>
@@ -207,59 +209,6 @@
             </div>
         </div>
     </main>
-
-    <div id="addBorrowerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-xl p-6 w-full max-w-md">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold text-gray-800">Add New Borrower</h3>
-                <button onclick="closeAddBorrowerModal()" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <form id="addBorrowerForm">
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Username</label>
-                        <input type="text" name="username" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Password</label>
-                        <input type="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700 text-sm font-medium mb-2">First Name</label>
-                            <input type="text" name="firstname" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 text-sm font-medium mb-2">Last Name</label>
-                            <input type="text" name="lastname" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Role</label>
-                        <select name="role" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                            <option value="">Select Role</option>
-                            <option value="Personnel">Personnel</option>
-                            <option value="Associate">Associate</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex justify-end space-x-3 mt-6">
-                    <button type="button" onclick="closeAddBorrowerModal()" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
-                        Add Borrower
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 </body>
 </html>
 <?= $this->endSection() ?>
