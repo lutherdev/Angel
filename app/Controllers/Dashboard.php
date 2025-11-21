@@ -15,10 +15,19 @@ class Dashboard extends BaseController
             'items' => $itemmodel->findAll()
         );
 
+        $reservationmodel = model('Reservation_model');
+        $borrowmodel = model('Borrow_model');
+
+        $data2 = array(
+            'title' => 'TW32 App - View User Record',
+            'reservations' => $reservationmodel->findAll(),
+            'borrowers' => $borrowmodel->findAll()
+        );
+
         if ($role == 'Personnel') {
             return view('dashboard_personnel', $data);
         } else if ($role == 'Associate') {
-            return view('dashboard_associate');
+            return view('dashboard_associate', $data2);
         } else if ($role == 'God'){
             return view('homepage');
         } else {

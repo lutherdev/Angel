@@ -33,6 +33,7 @@
                         <tr class="border-b-2 border-gray-200 bg-gray-50">
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Reservation ID</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Username</th>
+                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Name</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Equipment</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Reserved Date</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Valid Until</th>
@@ -50,30 +51,30 @@
                                             <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                                 <i class="fas fa-user text-blue-600 text-xs"></i>
                                             </div>
-                                            <span class="font-medium"><?= $reservation['username'] ?></span>
+                                            <span class="font-medium"><?= $reservation['user_id'] // replace with username ?></span>
                                         </div>
                                     </td>
+                                    <td class="py-4 px-4 text-gray-600"><?=  $reservation['user_id'] //user name here ?></td>
                                     <td class="py-4 px-4">
                                         <div class="flex items-center">
                                             <i class="fas fa-laptop text-gray-400 mr-2"></i>
-                                            <span><?= $reservation['equipment_name'] ?? 'Equipment #' . $reservation['equipment_id'] ?></span>
+                                            <span><?=  $reservation['equipment_id']. ' - '. $reservation['equipment_id'] ?></span>
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 text-gray-600"><?= date('M j, Y', strtotime($reservation['reserved_date'])) ?></td>
                                     <td class="py-4 px-4">
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
-                                            <?= strtotime($reservation['valid_until']) < time() ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' ?>">
-                                            <?= date('M j, Y', strtotime($reservation['valid_until'])) ?>
-                                        </span>
+                                        <!-- <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+                                            <// strtotime($reservation['valid_until']) < time() ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' ?>">
+                                            <// date('M j, Y', strtotime($reservation['valid_until'])) ?>
+                                        </span> -->
                                     </td>
                                     <td class="py-4 px-4">
                                         <?php
                                         $statusColors = [
-                                            'pending' => 'bg-yellow-100 text-yellow-800',
-                                            'confirmed' => 'bg-blue-100 text-blue-800',
-                                            'active' => 'bg-green-100 text-green-800',
-                                            'completed' => 'bg-gray-100 text-gray-800',
-                                            'cancelled' => 'bg-red-100 text-red-800'
+                                            'Reserved' => 'bg-yellow-100 text-yellow-800',
+                                            'Reschedule' => 'bg-blue-100 text-blue-800',
+                                            'Done' => 'bg-green-100 text-green-800',
+                                            'Cancelled' => 'bg-red-100 text-red-800'
                                         ];
                                         $statusColor = $statusColors[$reservation['status']] ?? 'bg-gray-100 text-gray-800';
                                         ?>
@@ -84,9 +85,10 @@
                                     </td>
                                     <td class="py-4 px-4">
                                         <div class="flex space-x-2">
+
                                             <button class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200" 
                                                     title="View Details"
-                                                    onclick="viewReservation(<?= $reservation['reservation_id'] ?>)">
+                                                    onclick="viewReservation(<?= $reservation['reservation_id'] // add base url link stuff // ?>)">
                                                 <i class="fas fa-eye w-4 h-4"></i>
                                             </button>
                                             
@@ -135,10 +137,9 @@
                     <thead>
                         <tr class="border-b-2 border-gray-200 bg-gray-50">
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Borrower ID</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Full Name</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Username</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Email</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Role</th>
+                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Name</th>
+                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Equipment</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Status</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
@@ -153,16 +154,14 @@
                                             <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                                 <i class="fas fa-user text-purple-600 text-xs"></i>
                                             </div>
-                                            <span class="font-medium"><?= $borrower['firstname'] . ' ' . $borrower['lastname'] ?></span>
+                                            <span class="font-medium"><?= $borrower['user_id'] //fullname? ?></span>
                                         </div>
                                     </td>
-                                    <td class="py-4 px-4 text-gray-600"><?= $borrower['username'] ?></td>
-                                    <td class="py-4 px-4 text-gray-600"><?= $borrower['email'] ?></td>
                                     <td class="py-4 px-4">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
-                                            <?= $borrower['role'] === 'Personnel' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800' ?>">
-                                            <?= $borrower['role'] ?>
-                                        </span>
+                                        <span class="font-medium"><?= $borrower['user_id'] //fullname? ?></span>
+                                    </td>
+                                    <td class="py-4 px-4">
+                                        <span class="font-medium"><?= $borrower['user_id'] //equipment ?></span>
                                     </td>
                                     <td class="py-4 px-4">
                                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
