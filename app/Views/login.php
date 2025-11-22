@@ -93,7 +93,7 @@
                         REGISTER
                     </a>
                     <a 
-                        href='<?= base_url('forget');?>' 
+                        href='<?= base_url('password/forget');?>' 
                         class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center transition duration-200"
                     >
                         Forgot Password

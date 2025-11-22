@@ -35,7 +35,7 @@
                 </div>
                 
                 <div class="p-6">
-                    <form action="<?= base_url('password/forget') ?>" method="POST">
+                    <form action="<?= base_url('forget') ?>" method="POST">
                         <div class="mb-8">
                             <label for="email" class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-envelope mr-2 text-green-600"></i>Email Address

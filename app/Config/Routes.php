@@ -50,14 +50,14 @@ $routes->get('/return', 'Equipments::returnview');
 $routes->get('/reserve', 'Equipments::reserveview');
 
 
-$routes->get('forget', 'Password::forgetview');
-$routes->post('password/forget', 'Password::forget'); 
+$routes->get('password/forget', 'Password::forgetview');
+$routes->post('forget', 'Password::forget');
 
 $routes->get('password/reset/(:any)', 'Password::resetview/$1');
-
 $routes->post('reset/(:any)', 'Password::reset/$1');
-$routes->get('change', 'Password::changeview');
-$routes->post('password/change', 'Password::change');
+
+$routes->get('password/change', 'Password::changeview');
+$routes->post('passwordchange', 'Password::change');
 
 
 
