@@ -32,95 +32,105 @@
                 </div>
                 
                 <div class="p-6">
-                    <form>
-                        <div class="mb-6">
-                            <label for="reservation_id" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-hashtag mr-2 text-green-600"></i>Reservation ID
-                            </label>
-                            <input 
-                                type="text" 
-                                name="reservation_id" 
-                                id="reservation_id" 
-                                value=<?= esc($reservation['reservation_id']) ?> 
-                                readonly
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
-                            >
-                        </div>
+                     <form action="<?= base_url('reservation/update/' . $reservation['reservation_id']) ?>" method="POST">
+                    <?= csrf_field() ?>
 
-                        <div class="mb-6">
-                            <label for="equipment_id" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment ID
-                            </label>
-                            <input 
-                                type="number" 
-                                name="equipment_id" 
-                                id="equipment_id" 
-                                value=<?= esc($reservation['equipment_id']) ?> 
-                                required 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                            >
-                        </div>
+                    <div class="mb-6">
+                        <label for="reservation_id" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-hashtag mr-2 text-green-600"></i>Reservation ID
+                        </label>
+                        <input 
+                            type="text" 
+                            name="reservation_id" 
+                            id="reservation_id" 
+                            value="<?= esc($reservation['reservation_id']) ?>" 
+                            readonly
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
+                        />
+                    </div>
 
-                        <div class="mb-6">
-                            <label for="username" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-user mr-2 text-green-600"></i>Username
-                            </label>
-                            <input 
-                                type="text" 
-                                name="username" 
-                                id="username" 
-                                value=<?= esc($reservation['username']) ?> 
-                                required 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                            >
-                        </div>
+                    <!-- User Selection -->
+                    <div class="mb-6">
+                        <label for="user_id" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-user mr-2 text-green-600"></i>User
+                        </label>
+                        <select 
+                            name="user_id" 
+                            id="user_id" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+                        >
+                            <?php foreach ($users as $user): ?>
+                                <option value="<?= esc($user['id']) ?>" <?= $user['id'] == $reservation['user_id'] ? 'selected' : '' ?>>
+                                    <?= esc($user['username']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                        <div class="mb-6">
-                            <label for="reserved_date" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Reservation Date
-                            </label>
-                            <input 
-                                type="date" 
-                                name="reserved_date" 
-                                id="reserved_date" 
-                                value=<?= date('F d, Y', strtotime($reservation['reserved_date'])) ?>
-                                required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                            >
-                        </div>
+                    <!-- Equipment Selection -->
+                    <div class="mb-6">
+                        <label for="equipment_id" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment
+                        </label>
+                        <select 
+                            name="equipment_id" 
+                            id="equipment_id" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+                        >
+                            <?php foreach ($equipments as $equip): ?>
+                                <option value="<?= esc($equip['id']) ?>" <?= $equip['id'] == $reservation['equipment_id'] ? 'selected' : '' ?>>
+                                    <?= esc($equip['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                        <div class="mb-6">
-                            <label for="status" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-info-circle mr-2 text-green-600"></i>Status
-                            </label>
-                            <select 
-                                name="status" 
-                                id="status" 
-                                required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                            >
-                                <option value="pending">Pending</option>
-                                <option value="confirmed" selected>Confirmed</option>
-                                <option value="cancelled">Cancelled</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                        </div>
-                        
-                        <div class="flex justify-between items-center">
-                            <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
+                    <div class="mb-6">
+                        <label for="reserved_date" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Reserved Date
+                        </label>
+                        <input 
+                            type="date" 
+                            name="reserved_date" 
+                            id="reserved_date" 
+                            value="<?= date('Y-m-d', strtotime($reservation['reserved_date'])) ?>"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+                        />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="status" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-info-circle mr-2 text-green-600"></i>Status
+                        </label>
+                        <select 
+                            name="status" 
+                            id="status" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+                        >
+                            <option value="reserved" <?= $reservation['status'] == 'reserved' ? 'selected' : '' ?>>Reserved</option>
+                            <option value="cancelled" <?= $reservation['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                            <option value="rescheduled" <?= $reservation['status'] == 'rescheduled' ? 'selected' : '' ?>>Rescheduled</option>
+                        </select>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <a href="<?= base_url('reservation/view/' . $reservation['reservation_id']) ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
                             <i class="fas fa-arrow-left mr-2"></i>
-                                Back
-                            </a>
-                            <button 
-                                type="button" 
-                                class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
-                                onclick="alert('Reservation updated successfully!')"
-                            >
-                                <i class="fas fa-save mr-2"></i>
-                                Update Reservation
-                            </button>
-                        </div>
-                    </form>
+                            Back
+                        </a>
+                        <button 
+                            type="submit" 
+                            class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
+                        >
+                            <i class="fas fa-save mr-2"></i>
+                            Update Record
+                        </button>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

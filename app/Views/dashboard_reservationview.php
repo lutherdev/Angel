@@ -67,7 +67,7 @@
                             </label>
                             <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                                 <i class="fas fa-check-circle mr-1"></i>
-                                Confirmed
+                                tite
                             </span>
                         </div>
                     </div>

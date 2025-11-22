@@ -36,6 +36,7 @@ $routes->get('/reservation/view', 'Reservation::view');
 $routes->get('/reservation/edit', 'Reservation::edit');
 $routes->get('/reservation/view/(:num)', 'Reservation::view/$1');
 $routes->get('/reservation/edit/(:num)', 'Reservation::edit/$1');
+$routes->post('/reservation/update/(:num)', 'Reservation::update/$1');
 $routes->get('equipments/edit/(:num)', 'Equipments::edit/$1');
 $routes->post('equipments/update/(:num)', 'Equipments::update/$1');
 
@@ -44,6 +45,8 @@ $routes->get('/borrow/view', 'Borrow::view');
 $routes->get('/borrow/edit', 'Borrow::edit');
 $routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
 $routes->get('/borrow/edit/(:num)', 'Borrow::edit/$1');
+
+$routes->post('/borrow/update/(:num)', 'Borrow::update/$1');
 
 $routes->get('/borrow', 'Equipments::borrowview');
 $routes->get('/return', 'Equipments::returnview');
