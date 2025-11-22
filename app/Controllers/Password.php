@@ -56,7 +56,7 @@ class Password extends BaseController{
         }
 
         $session->setFlashData('success', 'EMAIL SENT!');
-        return redirect()->to('forget');
+        return redirect()->to('password/forget');
     }
 
     public function resetview($token){
@@ -104,7 +104,7 @@ class Password extends BaseController{
         $usermodel->update($tokenData['user_id'], ['password' => password_hash($password, PASSWORD_DEFAULT)]);
         //$usermodel->update($tokenData['user_id'], ['password' => $password]);
         $session->setFlashData('success', 'password updated!');
-        return redirect()->to('forget');
+        return redirect()->to('password/forget');
 
     }
     public function changeview(){

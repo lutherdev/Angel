@@ -1,3 +1,8 @@
+<?php 
+$staticPersonnel = ['dashboard', 'users', 'equipments'];
+$staticAssociate = ['dashboard', 'borrow', 'return', 'reserve'];
+$session = session();
+?>
 <!-- Mobile Menu Button -->
     <button onclick="toggleSidebar()" class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-green-900 text-white rounded-md shadow-lg">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,14 +27,11 @@
                     </button>
                 </div>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Information Technology Services Office (ITSO)</p>
+                <p class="text-green-200 text-sm mt-2 opacity-90">Hello, <?= $session->get('username');?> | <?= $session->get('role');?></p>
             </div>
             
             <!-- Navigation Links -->
-<?php 
-$staticPersonnel = ['dashboard', 'users', 'equipments'];
-$staticAssociate = ['dashboard', 'borrow', 'return', 'reserve'];
-$session = session();
-?>
+
 <ul class="space-y-2">
     <?php if ($session->get('role') == 'Personnel'): ?>
         <?php foreach ($staticPersonnel as $stP) : ?>
