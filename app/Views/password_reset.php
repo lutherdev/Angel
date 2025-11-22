@@ -31,7 +31,7 @@
           </div>
 
           <div class="p-6">
-            <form>
+            <form action="<?= base_url('reset/'.$token) ?>" method="POST">
 
               <div class="mb-6">
                 <label for="new_password" class="mb-2 block text-sm font-medium text-gray-700"> <i class="fas fa-lock mr-2 text-green-600"></i>New Password </label>
@@ -44,11 +44,25 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <button type="button" class="flex items-center rounded-lg bg-green-600 px-6 py-3 font-medium text-white shadow-md transition duration-200 hover:bg-yellow-500 hover:shadow-lg" onclick="alert('Password reset successfully!')">
+                <button type="submit" class="flex items-center rounded-lg bg-green-600 px-6 py-3 font-medium text-white shadow-md transition duration-200 hover:bg-yellow-500 hover:shadow-lg">
                   <i class="fas fa-sync-alt mr-2"></i>
                   Change Password
                 </button>
               </div>
+              <!-- Success/Error Messages -->
+                        <?php if (session()->getFlashdata('success')): ?>
+                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <?= session()->getFlashdata('success') ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if (session()->getFlashdata('error')): ?>
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                <?= session()->getFlashdata('error') ?>
+                            </div>
+                        <?php endif; ?>
             </form>
           </div>
         </div>

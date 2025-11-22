@@ -16,11 +16,14 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <main class="container mx-auto px-4 py-8">
+        
         <section class="text-center mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Forgot Password</h1>
             <p class="text-gray-600 text-lg">Enter your email to reset your password</p>
+            
         </section>
 
+        
         <div class="max-w-2xl mx-auto">
             <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
                 <div class="bg-gradient-to-b from-green-900 to-yellow-500

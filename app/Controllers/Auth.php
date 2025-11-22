@@ -17,12 +17,14 @@ class Auth extends BaseController
         if (!$user){
             return redirect()->to('dashboard')->with('error', 'Invalid username');
         }
-            $password = $this->request->getPost('password');
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $password = $this->request->getPost('password'); 
+        $storedHash = $user['password'];               // hash from DB
 
-        if ($password == $user['password']){
+        if (password_verify($password, $storedHash)) {
+            //SET OTHER ROLES
             $session->set('role', $user['role']);
-            return redirect()->to('dashboard')->with('success', 'Invalid username or password.');
+            $session->set('name', $user['first_name']);
+            return redirect()->to('dashboard')->with('success', 'HELLO'.$user['first_name'] .'SUCCESS LOGIN');
         }
         return redirect()->to('dashboard')->with('error', 'Invalid password.');
     }
