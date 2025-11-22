@@ -95,14 +95,14 @@
                                             
                                             <a href="<?= base_url('reservation/edit/' . $reservation['reservation_id']); ?>"
                                                 class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
+                                                title="Edit Details">
                                                     <i class="fas fa-edit w-4 h-4"></i>
                                                 </a>
 
                                             
                                             <a href="<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>"
                                                 class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
+                                                title="Delete Details">
                                                     <i class="fas fa-trash w-4 h-4"></i>
                                                 </a>
 
@@ -184,13 +184,13 @@
                                             
                                             <a href="<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>"
                                                 class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
+                                                title="Edit Details">
                                                     <i class="fas fa-edit w-4 h-4"></i>
                                                 </a>
                                             
                                             <a href="<?= base_url('borrow/delete/' . $borrower['borrow_id']); ?>"
                                                 class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
+                                                title="Delete Details">
                                                     <i class="fas fa-trash w-4 h-4"></i>
                                                 </a>
                                         </div>

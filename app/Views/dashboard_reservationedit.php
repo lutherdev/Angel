@@ -41,7 +41,7 @@
                                 type="text" 
                                 name="reservation_id" 
                                 id="reservation_id" 
-                                value="R001" 
+                                value=<?= esc($reservation['reservation_id']) ?> 
                                 readonly
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
                             >
@@ -55,7 +55,7 @@
                                 type="number" 
                                 name="equipment_id" 
                                 id="equipment_id" 
-                                value="101" 
+                                value=<?= esc($reservation['equipment_id']) ?> 
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
@@ -69,7 +69,7 @@
                                 type="text" 
                                 name="username" 
                                 id="username" 
-                                value="john_doe" 
+                                value=<?= esc($reservation['username']) ?> 
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
@@ -83,7 +83,7 @@
                                 type="date" 
                                 name="reserved_date" 
                                 id="reserved_date" 
-                                value="2023-12-15"
+                                value=<?= date('F d, Y', strtotime($reservation['reserved_date'])) ?>
                                 required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >

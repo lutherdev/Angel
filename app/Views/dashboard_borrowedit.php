@@ -32,7 +32,9 @@
                 </div>
                 
                 <div class="p-6">
-                    <form>
+                    <form action="<?= base_url('borrow/update/' . $borrow['borrow_id']) ?>" method="POST">
+                        <?= csrf_field() ?>
+                        
                         <div class="mb-6">
                             <label for="borrow_id" class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-hashtag mr-2 text-green-600"></i>Borrow ID
@@ -41,7 +43,7 @@
                                 type="text" 
                                 name="borrow_id" 
                                 id="borrow_id" 
-                                value="B001" 
+                                value="<?= esc($borrow['borrow_id']) ?>" 
                                 readonly
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
                             >
@@ -55,7 +57,7 @@
                                 type="number" 
                                 name="equipment_id" 
                                 id="equipment_id" 
-                                value="101" 
+                                value="<?= esc($borrow['equipment_id']) ?>" 
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
@@ -69,7 +71,7 @@
                                 type="text" 
                                 name="username" 
                                 id="username" 
-                                value="john_doe" 
+                                value="<?= esc($borrow['username']) ?>" 
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
@@ -83,7 +85,7 @@
                                 type="number" 
                                 name="quantity" 
                                 id="quantity" 
-                                value="2"
+                                value="<?= esc($borrow['quantity']) ?>"
                                 required 
                                 min="1"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
@@ -98,7 +100,7 @@
                                 type="date" 
                                 name="borrow_date" 
                                 id="borrow_date" 
-                                value="2023-12-10"
+                                value="<?= date('Y-m-d', strtotime($borrow['borrow_date'])) ?>"
                                 required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
@@ -112,7 +114,7 @@
                                 type="date" 
                                 name="return_date" 
                                 id="return_date" 
-                                value="2023-12-17"
+                                value="<?= date('Y-m-d', strtotime($borrow['return_date'])) ?>"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
                         </div>
@@ -127,20 +129,19 @@
                                 required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                             >
-                                <option value="borrowed" selected>Borrowed</option>
-                                <option value="returned">Returned</option>
+                                <option value="borrowed" <?= $borrow['status'] == 'borrowed' ? 'selected' : '' ?>>Borrowed</option>
+                                <option value="returned" <?= $borrow['status'] == 'returned' ? 'selected' : '' ?>>Returned</option>
                             </select>
                         </div>
                         
                         <div class="flex justify-between items-center">
-                            <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
-                            <i class="fas fa-arrow-left mr-2"></i>
+                            <a href="<?= base_url('borrow/view/' . $borrow['borrow_id']) ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
+                                <i class="fas fa-arrow-left mr-2"></i>
                                 Back
                             </a>
                             <button 
-                                type="button" 
+                                type="submit" 
                                 class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
-                                onclick="alert('Borrowing record updated successfully!')"
                             >
                                 <i class="fas fa-save mr-2"></i>
                                 Update Record

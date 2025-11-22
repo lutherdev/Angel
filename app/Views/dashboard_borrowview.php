@@ -37,51 +37,53 @@
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-hashtag mr-2 text-green-600"></i>Borrow ID
                             </label>
-                            <p class="text-gray-900 font-semibold text-lg">B001</p>
+                            <p class="text-gray-900 font-semibold text-lg"><?= esc($borrow['borrow_id']) ?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment ID
                             </label>
-                            <p class="text-gray-900">101</p>
+                            <p class="text-gray-900"><?= esc($borrow['equipment_id'])?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-user mr-2 text-green-600"></i>Username
                             </label>
-                            <p class="text-gray-900">john_doe</p>
+                            <p class="text-gray-900"><?= esc($borrow['username']) ?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-boxes mr-2 text-green-600"></i>Quantity
                             </label>
-                            <p class="text-gray-900">2</p>
+                            <p class="text-gray-900"><?= esc($borrow['quantity'])?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Borrow Date
                             </label>
-                            <p class="text-gray-900">December 10, 2023</p>
+                            <p class="text-gray-900"><?= date("F d, Y", strtotime($borrow['borrow_date']))?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-calendar-check mr-2 text-green-600"></i>Return Date
                             </label>
-                            <p class="text-gray-900">December 17, 2023</p>
+                            <p class="text-gray-900"><?= date("F d, Y", strtotime($borrow['return_date']))?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-info-circle mr-2 text-green-600"></i>Status
                             </label>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium 
+                                <?= $borrow['status'] == 'borrowed' ? 'bg-orange-100 text-orange-800' : 'bg-green-100 text-green-800' ?>">
+                                
                                 <i class="fas fa-clock mr-1"></i>
-                                Borrowed
+                                <?= ucfirst($borrow['status']) ?>
                             </span>
                         </div>
                     </div>
@@ -91,7 +93,7 @@
                             <i class="fas fa-arrow-left mr-2"></i>
                             Back
                         </a>
-                        <a href="<?= base_url('borrow/edit/1') ?>" class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg">
+                        <a href="<?= base_url('borrow/edit/' . $borrow['borrow_id']) ?>" class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg">
                             <i class="fas fa-edit mr-2"></i>
                             Edit Record
                         </a>

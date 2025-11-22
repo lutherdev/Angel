@@ -37,28 +37,28 @@
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-hashtag mr-2 text-green-600"></i>Reservation ID
                             </label>
-                            <p class="text-gray-900 font-semibold text-lg">R001</p>
+                            <p class="text-gray-900 font-semibold text-lg"><?= esc($reservation['reservation_id']) ?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment ID
                             </label>
-                            <p class="text-gray-900">101</p>
+                            <p class="text-gray-900"><?= esc($reservation['equipment_id']) ?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-user mr-2 text-green-600"></i>Username
                             </label>
-                            <p class="text-gray-900">john_doe</p>
+                            <p class="text-gray-900"><?= esc($reservation['username']) ?></p>
                         </div>
 
                         <div>
                             <label class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Reservation Date
                             </label>
-                            <p class="text-gray-900">December 15, 2023</p>
+                            <p class="text-gray-900"><?= date('F d, Y', strtotime($reservation['reserved_date'])) ?></p>
                         </div>
 
                         <div>
