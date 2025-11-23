@@ -68,17 +68,7 @@
     <!-- Main Content Area -->
     <main class="flex-1 p-8 space-y-8">
         <!-- Users Table -->
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold text-gray-800">Personnel Database</h2>
-                <button onclick="window.location.href='<?= base_url('users/add') ?>'" 
-                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors">
-                    Add New User
-                </button>
-            </div>
-            
-            <!-- Success/Error Messages -->
-            <?php if (session()->getFlashdata('success')): ?>
+         <?php if (session()->getFlashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                     <?= session()->getFlashdata('success') ?>
                 </div>
@@ -89,6 +79,17 @@
                     <?= session()->getFlashdata('error') ?>
                 </div>
             <?php endif; ?>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Personnel Database</h2>
+                <button onclick="window.location.href='<?= base_url('users/add') ?>'" 
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors">
+                    Add New User
+                </button>
+            </div>
+            
+            <!-- Success/Error Messages -->
+            
             
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">

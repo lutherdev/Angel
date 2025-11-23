@@ -26,8 +26,19 @@
         <!-- Welcome Section -->
         <section class="text-center mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Welcome to Equipment Management</h1>
+            <p class="text-gray-600 text-lg">Choose a module</p>
         </section>
-        
+        <?php if (session()->getFlashdata('success')): ?>
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            <?php endif; ?>
         <!-- Dashboard Cards -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <!-- Database Card -->
@@ -77,10 +88,6 @@
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Add Equipment</h3>
                         <p class="text-gray-600 mb-6">Borrow laptops, DLPs, cables & more</p>
-                        <div class="mt-auto bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
-                            <i class="fas fa-plus mr-2"></i>
-                            Add
-                        </div>
                     </div>
                 </a>
             </div>
@@ -99,10 +106,6 @@
                             <i class="fas fa-toggle-on text-blue-600 text-3xl"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate</h3>
-                        <div class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
-                            <i class="fas fa-toggle-on mr-2"></i>
-                            Activate
-                        </div>
                     </div>
                 </a>
             </div>
@@ -121,10 +124,6 @@
                             <i class="fas fa-toggle-off text-orange-600 text-3xl"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Deactivate</h3>
-                        <div class="mt-auto bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-medium flex items-center">
-                            <i class="fas fa-toggle-off mr-2"></i>
-                            Deactivate
-                        </div>
                     </div>
                 </a>
             </div>

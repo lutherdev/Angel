@@ -104,7 +104,7 @@
                                 Edit Equipment
                             </button>
                             
-                            <button onclick="window.location.href='<?= base_url('equipments'); ?>'" 
+                            <button onclick="window.location.href='<?= base_url('dashboard'); ?>'" 
                                     class="bg-yellow-500 hover:bg-yellow-400 text-white px-4 py-2 rounded-md transition-colors">
                                 Back to Equipment
                             </button>
@@ -116,7 +116,7 @@
                             </svg>
                             <h3 class="mt-4 text-lg font-medium text-green-900">Equipment not found</h3>
                             <p class="mt-2 text-green-700">The requested equipment could not be found.</p>
-                            <button onclick="window.location.href='<?= base_url('equipments'); ?>'" 
+                            <button onclick="window.location.href='<?= base_url('dashboard'); ?>'" 
                                     class="mt-4 bg-green-900 hover:bg-green-800 text-white px-4 py-2 rounded-md transition-colors">
                                 Back to Equipment
                             </button>

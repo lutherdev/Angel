@@ -64,7 +64,7 @@ class Equipments extends BaseController
             'equipment' => $eqpmodel->find($id)
         );
 
-        return view('equipments_update', $data);
+        return view('equipments_edit', $data);
     }
 
     public function update($id) {

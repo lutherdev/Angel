@@ -22,14 +22,14 @@
                     <div>
                         <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Equipment Name</label>
                         <input type="text" id="name" name="name" value="<?= isset($equipment['name']) ? $equipment['name'] : ''; ?>" 
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
                     </div>
 
                     <!-- Category -->
                     <div>
                         <label for="category" class="block text-sm font-semibold text-gray-700 mb-2">Category</label>
                         <input type="text" id="category" name="category" value="<?= isset($equipment['category']) ? $equipment['category'] : ''; ?>"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     </div>
 
                     <!-- Description -->
@@ -67,7 +67,7 @@
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
                         Update Equipment
                     </button>
-                    <a href="<?= base_url('equipments'); ?>" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
+                    <a href="<?= base_url('dashboard'); ?>" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
                         Cancel
                     </a>
                 </div>

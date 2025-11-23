@@ -27,20 +27,21 @@ $session = session();
                     </button>
                 </div>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Information Technology Services Office (ITSO)</p>
-                <p class="text-green-200 text-sm mt-2 opacity-90">Hello, <?= $session->get('username');?> | <?= $session->get('role');?></p>
+                <p class="text-green-200 text-sm mt-2 opacity-90">Hello, <?= $session->get('username');?> | <?= $session->get('name');?> | <?= $session->get('role');?></p>
             </div>
             
             <!-- Navigation Links -->
 
 <ul class="space-y-2">
     <?php if ($session->get('role') == 'Personnel'): ?>
-        <?php foreach ($staticPersonnel as $stP) : ?>
+<?php foreach ($staticPersonnel as $stP) : ?>
     <li class="w-full">
-        <a href="<?= base_url($stP)?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span><?=strtoupper($stP) ?></span>
+        <a href="<?= base_url($stP) ?>" 
+           class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
+            <span><?= strtoupper($stP) ?></span>
         </a>
     </li>
-        <?php endforeach; ?>
+<?php endforeach; ?>
         <?php elseif ($session->get('role') == 'Associate'): ?>
             <?php foreach ($staticAssociate as $stA) : ?>
         <li class="w-full">
@@ -57,3 +58,41 @@ $session = session();
     </li>
 </ul>
         </nav>
+<script>
+function setActiveNavItem(clickedElement) {
+    document.querySelectorAll('nav ul li a').forEach(item => {
+        item.classList.remove('bg-green-900', 'shadow-sm', 'relative', 'font-semibold');
+        const existingIndicator = item.querySelector('.active-indicator');
+        if (existingIndicator) existingIndicator.remove();
+    });
+
+    clickedElement.classList.add('bg-green-900', 'shadow-sm', 'relative', 'font-semibold');
+
+    const indicator = document.createElement('div');
+    indicator.className = 'absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-6 bg-white rounded-full active-indicator';
+    clickedElement.prepend(indicator);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const path = window.location.pathname;             
+    const segments = path.split('/').filter(Boolean);  
+    const currentPage = segments[segments.length - 1]; 
+
+    let matchedItem = null;
+
+    document.querySelectorAll('nav ul li a').forEach(item => {
+        const linkPath = new URL(item.href).pathname;
+        const linkSegments = linkPath.split('/').filter(Boolean);
+        const linkPage = linkSegments[linkSegments.length - 1];
+
+        if (currentPage === linkPage) {
+            matchedItem = item;
+        }
+    });
+
+    if (matchedItem) {
+        setActiveNavItem(matchedItem);
+    }
+});
+</script>

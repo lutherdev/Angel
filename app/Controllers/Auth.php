@@ -25,10 +25,10 @@ class Auth extends BaseController
             $session->set('role', $user['role']);
             $session->set('user_id', $user['id']);
             $session->set('username', $user['username']);
-            $session->set('name', $user['first_name']);
+            $session->set('name', $user['first_name']." ".$user['last_name']);
             $session->set('isLoggedIn', true);
 
-            return redirect()->to('dashboard')->with('success', 'HELLO'.$user['first_name'] .'SUCCESS LOGIN');
+            return redirect()->to('dashboard')->with('success', 'HELLO '.$user['first_name'] .', SUCCESS LOGIN');
         }
         return redirect()->to('dashboard')->with('error', 'Invalid password.');
     }

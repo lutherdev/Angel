@@ -74,14 +74,15 @@ class Users extends BaseController
             'user' => $usermodel->find($id)
         );
 
-        return view('users_update', $data);
+        return view('users_edit', $data);
     }
 
     //ACTUAL UPDATE
     public function update($id) { //validation for inputs and flashdata set
         $usermodel = model('Users_model');
         $session = session();
-
+        $user = $usermodel->find($id);
+        
         $data = array (
             'username' => $this->request->getPost('username'),
             'first_name' => $this->request->getPost('first_name'),
@@ -92,15 +93,36 @@ class Users extends BaseController
             'email' => $this->request->getPost('email'),
         );
 
-        $usermodel->update($id, $data);
+        $existuser = $usermodel->where('username', $data['username'])->first();
+        if ($existuser && $existuser['id'] != $id){ //if the user exists and if that user isnt equal to the one u r editing
+            $session->setFlashData('error', 'username already exists');
+            return redirect()->to('dashboard');
+        }
 
-        return redirect()->to('users');
+        $existemail = $usermodel->where('email', $data['email'])->first();
+        if ($existemail && $existemail['id'] != $id){ //if the user exists and if that user isnt equal to the one u r editing
+            $session->setFlashData('error', 'email already used');
+            return redirect()->to('dashboard');
+        }
+
+        $usermodel->update($id, $data);
+        $session->setFlashData('success', 'User updated successfully.');
+        return redirect()->to('dashboard');
     }
 
     public function delete($id) { //modal for sureness
         $usermodel = model('Users_model');
         $session = session();
+        try {
         $usermodel->delete($id);
-        return redirect()->to('users');
+
+        // success
+        $session->setFlashdata('success', 'User deleted successfully.');
+        return redirect()->to('dashboard');
+
+    } catch (\CodeIgniter\Database\Exceptions\DatabaseException $e) {
+        $session->setFlashdata('error', 'Cannot delete this user because they have existing reservations.');
+        return redirect()->to('dashboard');
+    }
     }
 }
