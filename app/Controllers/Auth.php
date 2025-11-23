@@ -24,7 +24,7 @@ class Auth extends BaseController
         }
         $password = $this->request->getPost('password'); 
         $storedHash = $user['password'];               // hash from DB
-        if ($user['status'] == 'Inactive'){
+        if ($user['status'] == 'INACTIVE'){
             return redirect()->to('dashboard')->with('error', 'User deactivated');
         }
         if (password_verify($password, $storedHash)) {
