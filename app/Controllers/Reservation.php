@@ -5,6 +5,15 @@ namespace App\Controllers;
 class Reservation extends BaseController{
 
     public function reserveview(){
+        $session = session();
+        $checkses = $session->get('isLoggedIn');
+        if (!$checkses) {
+        return redirect()->to('/login')->with('error', 'Please login first.');
+        }
+        
+        if (!($session->get('role') == 'Associate')) {
+        return redirect()->to('/dashboard')->with('error', 'Only Associates can Reserve.');
+        }
         return view('reserve_view');
     }
 

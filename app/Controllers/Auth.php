@@ -4,8 +4,13 @@ namespace App\Controllers;
 
 class Auth extends BaseController
 {
-    public function index(): string
-    {   
+    public function index()
+    {      
+        $session = session();
+        $checkses = $session->get('isLoggedIn');
+        if ($checkses) {
+        return redirect()->to('dashboard')->with('error', 'Already Loggedin');
+        }
         return view('login');
     }
 
@@ -25,6 +30,8 @@ class Auth extends BaseController
             $session->set('role', $user['role']);
             $session->set('user_id', $user['id']);
             $session->set('username', $user['username']);
+            $session->set('email', $user['email']);
+            $session->set('created_at', $user['created_at']);
             $session->set('name', $user['first_name']." ".$user['last_name']);
             $session->set('isLoggedIn', true);
 

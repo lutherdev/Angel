@@ -8,11 +8,15 @@ class Dashboard extends BaseController
         $role = session()->get('role'); 
         $usermodel = model('Users_model');
         $itemmodel = model('Equipments_model');
-
+        $reservationmodel = model('Reservation_model');
+        $borrowmodel = model('Borrow_model');
+        
         $data = array(
             'title' => 'TW32 App - View User Record',
             'users' => $usermodel->findAll(),
-            'equipments' => $itemmodel->findAll()
+            'equipments' => $itemmodel->findAll(),
+            'reservations' => $reservationmodel->findAll(),
+            'borrowers' => $borrowmodel->findAll()
         );
 
         $reservationmodel = model('Reservation_model');
