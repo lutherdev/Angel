@@ -56,7 +56,8 @@ $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
 // ========================BORROW==================================
 
 $routes->get('/borrow', 'Borrow::borrowview'); //view
-$routes->post('/borrow/equipment', 'Borrow::borrow'); //controller
+$routes->post('/borrow/equipment', 'Borrow::borrow');
+$routes->post('/borrow/borrow', 'Borrow::borrow'); //controller
 
 $routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
 
