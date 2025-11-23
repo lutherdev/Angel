@@ -85,6 +85,12 @@
                             <p class="text-gray-900">
                                 <?= date("F d, Y", strtotime($user['created_at'])) ?>
                             </p>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">
+                                <i class="fas fa-calendar-plus mr-2 text-green-600"></i>Last Updated
+                            </label>
+                            <p class="text-gray-900">
+                                <?= date("F d, Y", strtotime($user['updated_at'])) ?>
+                            </p>
                         </div>
 
                     </div>

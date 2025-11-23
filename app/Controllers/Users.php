@@ -146,6 +146,20 @@ class Users extends BaseController
     }
 
     public function deact(){
+        $session = session();
+        $usermodel = model('Users_model');
+        $user = $usermodel->find($session->get('user_id'));
+        
+        $data = array (
+            'password' => $this->request->getPost('password')
+        );
 
+        if (!(password_verify($data['password'], $user['password']))){
+            $session->setFlashdata('error', 'wrong password.');
+            return redirect()->to('user/deactivate');
+        }
+        $usermodel->update($session->get('user_id'), ['status' => 'Inactive']);
+        $session->destroy();
+        return redirect()->to('login')->with('success', 'deactivated successfuly');
     }
 }

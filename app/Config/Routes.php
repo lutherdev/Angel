@@ -30,6 +30,7 @@ $routes->get('/users', 'Users::index'); //view leads to user dashboard
 $routes->get('users/view/(:num)', 'Users::view/$1');//view
 
 $routes->get('users/edit/(:num)', 'Users::edit/$1');//view
+$routes->get('user/edit/(:num)', 'Users::edit/$1');//view
 $routes->post('users/update/(:num)', 'Users::update/$1'); //not view
 
 $routes->get('users/delete/(:num)', 'Users::delete/$1');
@@ -37,7 +38,7 @@ $routes->get('users/delete/(:num)', 'Users::delete/$1');
 $routes->get('user/profile', 'Users::profile');
 
 $routes->get('user/deactivate', 'Users::deactview');
-$routes->get('/deactivate', 'Users::deact');
+$routes->post('/deactivate', 'Users::deact');
 
 // ========================EQUIPMENTS==================================
 
@@ -57,7 +58,7 @@ $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
 
 $routes->get('/borrow', 'Borrow::borrowview'); //view
 $routes->post('/borrow/equipment', 'Borrow::borrow');
-$routes->post('/borrow/borrow', 'Borrow::borrow'); //controller
+$routes->post('/borrow/borrow', 'Borrow::borrow'); //FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 $routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
 
@@ -71,6 +72,8 @@ $routes->get('borrow/delete/(:num)', 'Borrow::delete/$1');
 // ========================RETURN==================================
 $routes->get('/return', 'ReturnItem::returnview');
 $routes->post('/return/equipment', 'ReturnItem::return');
+
+$routes->post('return/return', 'ReturnItem::returnItem');//FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // ========================RESERVE==================================
 
 $routes->get('/reserve', 'Reservation::reserveview');
