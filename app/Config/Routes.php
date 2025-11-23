@@ -5,9 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// ======================== DASH BOARD ==================================
 
-//$routes->get('/', 'Home::index');
 $routes->get('/', 'Dashboard::index');
+$routes->get('dashboard', 'Dashboard::index'); //leads to all kinds of dashboard
+
+// ======================== AUTH ==================================
+
 $routes->get('login', 'Auth::index');
 $routes->post('auth/login', 'Auth::login');
 
@@ -16,13 +20,13 @@ $routes->post('auth/register', 'Auth::register');
 
 $routes->get('auth/logout', 'Auth::logout');
 
-$routes->get('dashboard', 'Dashboard::index'); //leads to all kinds of dashboard
-
 // ========================USERS==================================
 
 $routes->get('/users', 'Users::index'); //view leads to user dashboard
+
 // $routes->get('/users/add', 'Users::add');
 // $routes->post('/users/insert', 'Users::insert');
+
 $routes->get('users/view/(:num)', 'Users::view/$1');//view
 
 $routes->get('users/edit/(:num)', 'Users::edit/$1');//view
@@ -44,24 +48,34 @@ $routes->post('equipments/update/(:num)', 'Equipments::update/$1');
 
 $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
 
-// ========================RESERVATIONS==================================
+// ========================BORROW==================================
+
+$routes->get('/borrow', 'Borrow::borrowview'); //view
+$routes->post('/borrow/equipment', 'Borrow::borrow'); //controller
+
+$routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
+
+$routes->get('/borrow/edit/(:num)', 'Borrow::edit/$1'); //view
+$routes->post('/borrow/update/(:num)', 'Borrow::update/$1'); //controller
+
+$routes->get('borrow/delete/(:num)', 'Borrow::delete/$1');
+
+
+
+// ========================RETURN==================================
+$routes->get('/return', 'ReturnItem::returnview');
+$routes->post('/return/equipment', 'ReturnItem::return');
+// ========================RESERVE==================================
+
+$routes->get('/reserve', 'Reservation::reserveview');
+$routes->post('/reserve/equipment', 'Reservation:reserve');
 
 $routes->get('reservation/view/(:num)', 'Reservation::view/$1');
+
 $routes->get('reservation/edit/(:num)', 'Reservation::edit/$1');
 $routes->post('reservation/update/(:num)', 'Reservation::update/$1');
 
-// ========================BORROW==================================
-
-$routes->get('/borrow/view', 'Borrow::view');
-$routes->get('/borrow/edit', 'Borrow::edit');
-$routes->get('/borrow/view/(:num)', 'Borrow::view/$1');
-$routes->get('/borrow/edit/(:num)', 'Borrow::edit/$1');
-
-$routes->post('/borrow/update/(:num)', 'Borrow::update/$1');
-
-$routes->get('/borrow', 'Equipments::borrowview');
-$routes->get('/return', 'Equipments::returnview');
-$routes->get('/reserve', 'Equipments::reserveview');
+$routes->get('reservation/delete/(:num)', 'Reservation::delete/$1');
 
 // ========================PASSWORD==================================
 

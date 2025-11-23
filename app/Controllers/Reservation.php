@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 class Reservation extends BaseController{
 
+    public function reserveview(){
+        return view('reserve_view');
+    }
+
     public function view($id){
         $reservationModel = model('Reservation_model');
 
@@ -13,7 +17,7 @@ class Reservation extends BaseController{
         ->join('tblusers', 'tblusers.id = tblreservations.user_id')
         ->find($id);
 
-        return view('dashboard_reservationview', $data);
+        return view('reservation_view', $data);
     }
 
      public function edit($id){
@@ -29,7 +33,7 @@ class Reservation extends BaseController{
         $data['users'] = $userModel->findAll();
         $data['equipments'] = $equipmentModel->findAll();
 
-        return view('dashboard_reservationedit', $data);
+        return view('reservation_edit', $data);
     }
 
 

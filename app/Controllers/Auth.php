@@ -66,6 +66,19 @@ class Auth extends BaseController
             'role' => strtoupper($this->request->getPost('role')),
             'status' => "Active"
         );
+
+        $existuser = $usermodel->where('username', $data['username'])->first();
+        if ($existuser){ //if the user exists and if that user isnt equal to the one u r editing
+            $session->setFlashData('error', 'username already exists');
+            return redirect()->to('register');
+        }
+
+        $existemail = $usermodel->where('email', $data['email'])->first();
+        if ($existemail){ //if the user exists and if that user isnt equal to the one u r editing
+            $session->setFlashData('error', 'email already used');
+            return redirect()->to('register');
+        }
+
         if(!$validation->run($dataToVal, 'signup')){
             $errors = implode('<br>', $validation->getErrors());
             $session->setFlashData('error', $errors);

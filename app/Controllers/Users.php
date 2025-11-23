@@ -4,8 +4,14 @@ namespace App\Controllers;
 
 class Users extends BaseController
 {
-    public function index(): string
+    public function index()
     {   
+        $session = session();
+        $checkses = $session->get('isLoggedIn');
+        if (!$checkses) {
+        return redirect()->to('/login')->with('error', 'Please login first.');
+        }
+
         $usermodel = model('Users_model');
         $eqpmodel = model('Equipments_model');
 

@@ -118,7 +118,7 @@
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <a href="<?= base_url('reservation/view/' . $reservation['reservation_id']) ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
+                        <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
                             <i class="fas fa-arrow-left mr-2"></i>
                             Back
                         </a>

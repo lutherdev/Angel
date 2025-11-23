@@ -8,4 +8,9 @@ class ReturnItem extends BaseController
     {   
         return view('homepage');
     }
+
+    public function returnview(){
+        return view('return_view');
+    }
+
 }

@@ -4,8 +4,14 @@ namespace App\Controllers;
 
 class Equipments extends BaseController
 {
-    public function index(): string
+    public function index()
     {   
+        $session = session();
+        $checkses = $session->get('isLoggedIn');
+        if (!$checkses) {
+        return redirect()->to('/login')->with('error', 'Please login first.');
+    }
+
         $eqpmodel = model('Equipments_model');
         $data = array(
             'title' => 'TW32 App - View User Record',
@@ -94,15 +100,6 @@ class Equipments extends BaseController
     }
 
 
-    public function borrowview(){
-        return view('equipments_borrow');
-    }
+    
 
-    public function returnview(){
-        return view("equipments_return");
-    }
-
-    public function reserveview(){
-        return view('equipments_reserve');
-    }
 }

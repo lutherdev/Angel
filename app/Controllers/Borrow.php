@@ -4,16 +4,30 @@ namespace App\Controllers;
 
 class Borrow extends BaseController
 {
+
+    public function borrow(){
+        //implement borrow
+        // get inputs by getpost()
+    }
+
+    public function borrowview(){
+        $equipmentModel = model('Equipments_model');
+        $data['equipments'] = $equipmentModel->findAll();
+
+        return view('borrow_view', $data);
+    }
+
+
     public function view($id){
         $borrowModel = model('Borrow_model');
 
         $data['borrow'] = $borrowModel
-        ->select('tblborrow.*, tblequipments.name as equipment_name, tblusers.username')
-        ->join('tblequipments', 'tblequipments.id = tblborrow.equipment_id')
+        ->select('tblborrow.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name')
         ->join('tblusers', 'tblusers.id = tblborrow.user_id')
+        ->join('tblequipments', 'tblequipments.id = tblborrow.equipment_id')
         ->find($id);
 
-        return view('dashboard_borrowview', $data);
+        return view('borrowed_view', $data);
     }
 
     public function edit($id){
@@ -22,14 +36,15 @@ class Borrow extends BaseController
         $equipmentModel = model('Equipments_model');
 
         $data['borrow'] = $borrowModel
-            ->select('tblborrow.*, tblusers.username')
-            ->join('tblusers', 'tblusers.id = tblborrow.user_id')
-            ->find($id);
+        ->select('tblborrow.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name')
+        ->join('tblusers', 'tblusers.id = tblborrow.user_id')
+        ->join('tblequipments', 'tblequipments.id = tblborrow.equipment_id')
+        ->find($id);
 
         $data['users'] = $userModel->findAll();
         $data['equipments'] = $equipmentModel->findAll();
 
-        return view('dashboard_borrowedit', $data);
+        return view('borrowed_edit', $data);
     }
 
 

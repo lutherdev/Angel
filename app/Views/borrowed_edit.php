@@ -52,20 +52,44 @@
                     <!-- User Selection -->
                     <div class="mb-6">
                         <label for="user_id" class="block text-gray-700 text-sm font-medium mb-2">
-                            <i class="fas fa-user mr-2 text-green-600"></i>User
+                            <i class="fas fa-hashtag mr-2 text-green-600"></i>User ID
                         </label>
-                        <select 
+                        <input 
+                            type="text" 
                             name="user_id" 
                             id="user_id" 
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                        >
-                            <?php foreach ($users as $user): ?>
-                                <option value="<?= esc($user['id']) ?>" <?= $user['id'] == $borrow['user_id'] ? 'selected' : '' ?>>
-                                    <?= esc($user['username']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+                            value="<?= esc($borrow['user_id']) ?>" 
+                            readonly
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
+                        />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="username" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-hashtag mr-2 text-green-600"></i>Username
+                        </label>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            id="username" 
+                            value="<?= esc($borrow['username']) ?>" 
+                            readonly
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
+                        />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="username" class="block text-gray-700 text-sm font-medium mb-2">
+                            <i class="fas fa-hashtag mr-2 text-green-600"></i>Equipment Code
+                        </label>
+                        <input 
+                            type="text" 
+                            name="equipment_id" 
+                            id="equipment_id" 
+                            value="<?= esc($borrow['equipment_id']) ?>" 
+                            
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
+                        />
                     </div>
 
                     <!-- Equipment Selection -->
@@ -98,6 +122,7 @@
                             value="<?= esc($borrow['quantity']) ?>"
                             required 
                             min="1"
+                            readonly
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                         />
                     </div>
@@ -145,7 +170,7 @@
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <a href="<?= base_url('borrow/view/' . $borrow['borrow_id']) ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
+                        <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-gray-800 font-medium flex items-center">
                             <i class="fas fa-arrow-left mr-2"></i>
                             Back
                         </a>

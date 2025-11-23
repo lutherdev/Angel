@@ -35,16 +35,20 @@
 
                     <div class="mb-6">
                         <label for="equipment_id" class="block text-gray-700 text-sm font-medium mb-2">
-                            <i class="fas fa-barcode mr-2 text-orange-600"></i>Equipment ID
+                            <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment
                         </label>
-                        <input 
-                            type="number" 
+                        <select 
                             name="equipment_id" 
                             id="equipment_id" 
-                            required 
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
-                            placeholder="Enter equipment ID"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                         >
+                            <?php foreach ($equipments as $equip): ?>
+                                <option value="<?= esc($equip['id']) ?>" <?= $equip['id'] ? 'selected' : '' ?>>
+                                    <?= esc($equip['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <div class="mb-6">
