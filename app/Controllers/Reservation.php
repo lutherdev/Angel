@@ -62,4 +62,48 @@ class Reservation extends BaseController{
 
         return redirect()->to('dashboard');
     }
+
+    public function release($id){
+    $reservationModel = model('Reservation_model');
+
+    // check reservation exists
+    $reservation = $reservationModel->find($id);
+    if (!$reservation) {
+        return redirect()->back()->with('error', 'Reservation not found.');
+        return redirect()->to('equipments')->with('success', 'Equipment status updated successfully.');
+    }
+
+    //implement here minus 1 sa equipment database
+
+    $reservationModel->update($id, [
+        'status' => 'RELEASED',
+        'updated_at' => date('Y-m-d H:i:s'),
+    ]);
+
+
+    return redirect()->back()->with('success', 'Reserved item is released.');
+    //return redirect()->to('equipments')->with('success', 'Equipment status updated successfully.');
+}
+
+    public function done($id){
+        $reservationModel = model('Reservation_model');
+
+        // check reservation exists
+        $reservation = $reservationModel->find($id);
+        if (!$reservation) {
+            return redirect()->back()->with('error', 'Reservation not found.');
+            //return redirect()->to('equipments')->with('success', 'Equipment status updated successfully.');
+        }
+
+
+        //implement here plus 1 sa equipment database
+
+        $reservationModel->update($id, [
+            'status' => 'DONE',
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->back()->with('success', 'Reserved item is claimed.');
+    }
+
 }

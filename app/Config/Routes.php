@@ -40,6 +40,9 @@ $routes->get('user/profile', 'Users::profile');
 $routes->get('user/deactivate', 'Users::deactview');
 $routes->post('/deactivate', 'Users::deact');
 
+$routes->get('users/status', 'Users::statuschangeview');
+$routes->post('users/statuschange', 'Users::statuschange');
+
 // ========================EQUIPMENTS==================================
 
 $routes->get('equipments', 'Equipments::index'); //view
@@ -53,6 +56,9 @@ $routes->get('equipments/edit/(:num)', 'Equipments::edit/$1');
 $routes->post('equipments/update/(:num)', 'Equipments::update/$1');
 
 $routes->get('equipments/delete/(:num)', 'Equipments::delete/$1');
+
+$routes->get('equipments/status', 'Equipments::statuschangeview');
+$routes->post('equipments/statuschange', 'Equipments::statuschange');
 
 // ========================BORROW==================================
 
@@ -84,6 +90,10 @@ $routes->get('reservation/edit/(:num)', 'Reservation::edit/$1');
 $routes->post('reservation/update/(:num)', 'Reservation::update/$1');
 
 $routes->get('reservation/delete/(:num)', 'Reservation::delete/$1');
+
+$routes->get('reservation/confirm/(:num)', 'Reservation::release/$1');
+$routes->get('reservation/done/(:num)', 'Reservation::done/$1');
+
 
 // ========================PASSWORD==================================
 

@@ -162,4 +162,37 @@ class Users extends BaseController
         $session->destroy();
         return redirect()->to('login')->with('success', 'deactivated successfuly');
     }
+
+    public function statuschangeview(){
+        $usermodel = model('Users_model');
+
+
+        $data['users'] = $usermodel->findAll();
+
+        return view('user_status', $data);
+    }
+
+    public function statuschange(){
+        $usermodel = model('Users_model');
+    $session = session();
+
+    // Get submitted data
+    $username = $this->request->getPost('username');
+    $status   = $this->request->getPost('status');
+
+    // Validate inputs
+    if (!$username || !$status) {
+        return redirect()->to('users')->with('error', 'Invalid form submission.'); 
+    }
+
+    // Update the row where username matches
+    $usermodel->where('username', $username)
+            ->set([
+                'status' => strtoupper($status),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ])
+            ->update();
+
+    return redirect()->to('users')->with('success', 'User status updated successfully.');   // or wherever your equipment list is
+    }
 }

@@ -99,7 +99,36 @@ class Equipments extends BaseController
         return redirect()->to('equipments');
     }
 
+    public function statuschangeview(){
+        $equipmentModel = model('Equipments_model');
 
+
+        $data['equipments'] = $equipmentModel->findAll();
+
+        return view('equipment_status.php', $data);
+    }
+
+    public function statuschange(){
+        $equipmentModel = model('Equipments_model');
+    $session = session();
+
+    // Get submitted data
+    $id = $this->request->getPost('equipment_id');
+    $status = $this->request->getPost('status');
+
+    // Validate basic inputs
+    if (!$id || !$status) {
+        return redirect()->back()->with('error', 'Invalid form submission.');
+    }
+
+    // Update the equipment status
+    $equipmentModel->update($id, [
+        'status' => strtoupper($status), // store lowercase for consistency
+        'updated_at' => date('Y-m-d H:i:s'),
+    ]);
+
+    return redirect()->to('equipments')->with('success', 'Equipment status updated successfully.');   // or wherever your equipment list is
+    }
     
 
 }

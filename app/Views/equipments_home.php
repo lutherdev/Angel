@@ -92,53 +92,36 @@
                 </a>
             </div>
 
-            <!-- Activate Equipment Card -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('equipments/activate'); ?>" class="text-decoration-none">
-                    <div class="bg-blue-600 p-4 text-white">
-                        <h2 class="text-xl font-bold flex items-center">
-                            <i class="fas fa-power-off mr-2"></i>
-                            ACTIVATE EQUIPMENT
-                        </h2>
-                    </div>
-                    <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-blue-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-toggle-on text-blue-600 text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate</h3>
-                    </div>
-                </a>
-            </div>
-
             <!-- Deactivate Equipment Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('equipments/deactivate'); ?>" class="text-decoration-none">
+                <a href="<?php echo base_url('equipments/status'); ?>" class="text-decoration-none">
                     <div class="bg-orange-600 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-ban mr-2"></i>
-                            DEACTIVATE EQUIPMENT
+                            ACTIVATE/DEACTIVATE EQUIPMENT
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
                         <div class="bg-orange-100 p-4 rounded-full mb-4">
                             <i class="fas fa-toggle-off text-orange-600 text-3xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Deactivate</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate / Deactivate</h3>
+                        <p class="text-gray-600 mb-6">Activate / Deactivate equipments</p>
                     </div>
                 </a>
             </div>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
                 <a href="<?php echo base_url('borrow'); ?>" class="text-decoration-none">
-                    <div class="bg-green-800 p-4 text-white">
+                    <div class="bg-blue-800 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-plus-circle mr-2"></i>
                             BORROW EQUIPMENT
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-green-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-laptop text-green-600 text-3xl"></i>
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-laptop text-blue-600 text-3xl"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Borrow Equipment</h3>
                         <p class="text-gray-600 mb-6">Borrow laptops, DLPs, cables & more</p>
@@ -147,15 +130,15 @@
             </div>
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
                 <a href="<?php echo base_url('reserve'); ?>" class="text-decoration-none">
-                    <div class="bg-green-800 p-4 text-white">
+                    <div class="bg-blue-800 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-plus-circle mr-2"></i>
                             RESERVE EQUIPMENT
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-green-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-laptop text-green-600 text-3xl"></i>
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-laptop text-blue-600 text-3xl"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Reserve Equipment</h3>
                         <p class="text-gray-600 mb-6">Reserve laptops, DLPs, cables & more</p>
@@ -164,15 +147,15 @@
             </div>
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
                 <a href="<?php echo base_url('return'); ?>" class="text-decoration-none">
-                    <div class="bg-green-800 p-4 text-white">
+                    <div class="bg-blue-800 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-plus-circle mr-2"></i>
                             RETURN EQUIPMENT
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-green-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-laptop text-green-600 text-3xl"></i>
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-laptop text-blue-600 text-3xl"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Return Equipment</h3>
                         <p class="text-gray-600 mb-6">Return laptops, DLPs, cables & more</p>

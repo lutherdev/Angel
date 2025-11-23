@@ -100,6 +100,7 @@
                             <th class="text-left py-3 px-4 font-semibold text-gray-700">Username</th>
                             <th class="text-left py-3 px-4 font-semibold text-gray-700">Full Name</th>
                             <th class="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
+                            <th class="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
                             <th class="text-left py-3 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
                     </thead>
@@ -110,6 +111,13 @@
                             <td class="py-3 px-4"><?= $user['username']; ?></td>
                             <td class="py-3 px-4"><?= $user['first_name']; ?></td>
                             <td class="py-3 px-4"><?= $user['email']; ?></td>
+                            <td class="py-3 px-4">
+                                    <?php 
+                                    $status = $user['status'] ?? 'ACTIVE';
+                                    $statusColor = $status === 'ACTIVE' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+                                    ?>
+                                    <span class="<?= $statusColor ?>"><?= $status ?></span>
+                                </td>
                             <td class="py-3 px-4">
                                 <div class="flex space-x-2">
                                     <!-- View Button -->
@@ -183,8 +191,8 @@
                                 <td class="py-3 px-4"><?= $equipment['avail_count']; ?></td>
                                 <td class="py-3 px-4">
                                     <?php 
-                                    $status = $equipment['status'] ?? 'available';
-                                    $statusColor = strtolower($status) === 'available' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+                                    $status = $equipment['status'] ?? 'ACTIVE';
+                                    $statusColor = $status === 'ACTIVE' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
                                     ?>
                                     <span class="<?= $statusColor ?>"><?= ucfirst($status) ?></span>
                                 </td>
@@ -284,10 +292,11 @@
                                     <td class="py-4 px-4">
                                         <?php
                                         $statusColors = [
-                                            'Reserved' => 'bg-yellow-100 text-yellow-800',
-                                            'Reschedule' => 'bg-blue-100 text-blue-800',
-                                            'Done' => 'bg-green-100 text-green-800',
-                                            'Cancelled' => 'bg-red-100 text-red-800'
+                                            'DONE' => 'bg-green-100 text-green-800',
+                                            'RESERVED' => 'bg-yellow-100 text-yellow-800',
+                                            'RESCHEDULED' => 'bg-blue-100 text-blue-800',
+                                            'RELEASED' => 'bg-green-100 text-red-800',
+                                            'CANCELLED' => 'bg-red-100 text-red-800'
                                         ];
                                         $statusColor = $statusColors[$reservation['status']] ?? 'bg-gray-100 text-gray-800';
                                         ?>
@@ -298,6 +307,12 @@
                                     </td>
                                     <td class="py-4 px-4">
                                         <div class="flex space-x-2">
+
+                                            <a href="<?= base_url('reservation/confirm/' . $reservation['reservation_id']); ?>"
+                                                class="bg-green-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="Confirm Reservation">
+                                                    <i class="fas fa-check w-4 h-4"></i>
+                                                </a>
 
                                             <a href="<?= base_url('reservation/view/' . $reservation['reservation_id']); ?>"
                                                 class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200"
@@ -312,12 +327,20 @@
                                                     <i class="fas fa-edit w-4 h-4"></i>
                                                 </a>
 
+                                            <a href="<?= base_url('reservation/done/' . $reservation['reservation_id']); ?>"
+                                                class="bg-green-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
+                                                title="Done Reservation">
+                                                    <i class="fas fa-check-double w-4 h-4"></i>
+                                                </a>
+
                                             
                                             <a href="<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>"
                                                 class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
                                                 title="Delete Details">
                                                     <i class="fas fa-trash w-4 h-4"></i>
                                                 </a>
+                                            
+                                            
 
                                         </div>
                                     </td>
@@ -387,9 +410,9 @@
                                     
                                     <td class="py-4 px-4">
                                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
-                                            <?= $borrower['status'] === 'Returned' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' ?>">
+                                            <?= $borrower['status'] === 'RETURNED' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-orange-800' ?>">
                                             <i class="fas fa-circle mr-1 text-xs"></i>
-                                            <?= ucfirst($borrower['status']) ?>
+                                            <?= $borrower['status'] ?>
                                         </span>
                                     </td>
                                     <td class="py-4 px-4 text-gray-600"><?= date('M j, Y', strtotime($borrower['return_date'])) ?></td>

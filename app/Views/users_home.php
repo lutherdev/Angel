@@ -77,38 +77,19 @@
 
             <!-- Activate User Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('users/activate'); ?>" class="text-decoration-none">
-                    <div class="bg-green-500 p-4 text-white">
+                <a href="<?php echo base_url('users/status'); ?>" class="text-decoration-none">
+                    <div class="bg-orange-500 p-4 text-white">
                         <h2 class="text-xl font-bold flex items-center">
                             <i class="fas fa-toggle-on mr-2"></i>
-                            ACTIVATE USER
+                            ACTIVATE/DEACTIVATE USER
                         </h2>
                     </div>
                     <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-green-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-user-check text-green-600 text-3xl"></i>
+                        <div class="bg-orange-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-user-check text-orange-600 text-3xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate</h3>
-                        <p class="text-gray-600 mb-6">Activate user accounts</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Deactivate User Card -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('users/deactivate'); ?>" class="text-decoration-none">
-                    <div class="bg-red-600 p-4 text-white">
-                        <h2 class="text-xl font-bold flex items-center">
-                            <i class="fas fa-toggle-off mr-2"></i>
-                            DEACTIVATE USER
-                        </h2>
-                    </div>
-                    <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-red-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-user-slash text-red-600 text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Deactivate</h3>
-                        <p class="text-gray-600 mb-6">Deactivate user accounts</p>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Activate / Deactivate</h3>
+                        <p class="text-gray-600 mb-6">Activate / Deactivate user accounts</p>
                     </div>
                 </a>
             </div>
