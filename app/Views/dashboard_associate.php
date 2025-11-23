@@ -36,7 +36,7 @@
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Name</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Equipment</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Reserved Date</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Valid Until</th>
+                            <!-- <th class="text-left py-4 px-4 font-semibold text-gray-700">Valid Until</th> -->
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Status</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
@@ -62,12 +62,13 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 text-gray-600"><?= date('M j, Y', strtotime($reservation['reserved_date'])) ?></td>
-                                    <td class="py-4 px-4">
-                                        <!-- <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+                                    <!-- <td class="py-4 px-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
                                             <// strtotime($reservation['valid_until']) < time() ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' ?>">
                                             <// date('M j, Y', strtotime($reservation['valid_until'])) ?>
-                                        </span> -->
-                                    </td>
+                                        </span> 
+                                        <td class="py-4 px-4 text-gray-600">< date('M j, Y', strtotime($reservation['valid_until'])) ?></td>
+                                    </td> -->
                                     <td class="py-4 px-4">
                                         <?php
                                         $statusColors = [
@@ -140,10 +141,12 @@
                     <thead>
                         <tr class="border-b-2 border-gray-200 bg-gray-50">
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Borrower ID</th>
+                            <th class="text-left py-4 px-4 font-semibold text-gray-700">User ID</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Username</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Name</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Equipment</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Status</th>
+                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Return Date</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
                     </thead>
@@ -151,7 +154,7 @@
                         <?php if (!empty($borrowers)): ?>
                             <?php foreach ($borrowers as $borrower): ?>
                                 <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                                    <td class="py-4 px-4 font-medium text-gray-900">#<?= $borrower['user_id'] ?></td>
+                                    <td class="py-4 px-4 font-medium text-gray-900">#<?= $borrower['borrow_id'] ?></td>
                                     <td class="py-4 px-4">
                                         <div class="flex items-center">
                                             <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
@@ -160,19 +163,25 @@
                                             <span class="font-medium"><?= $borrower['user_id'] //fullname? ?></span>
                                         </div>
                                     </td>
-                                    <td class="py-4 px-4">
+                                    <td class="py-4 px-4"> <!-- username -->
                                         <span class="font-medium"><?= $borrower['user_id'] //fullname? ?></span>
                                     </td>
-                                    <td class="py-4 px-4">
-                                        <span class="font-medium"><?= $borrower['user_id'] //equipment ?></span>
+                                    <td class="py-4 px-4"> <!-- full name -->
+                                        <span class="font-medium"><?= $borrower['user_id'] //fullname? ?></span>
                                     </td>
+                                    <td class="py-4 px-4"> <!-- equipment id and name -->
+                                        <span class="font-medium"><?= $borrower['equipment_id'].' - '.$borrower['equipment_id'] //equipment ?></span>
+                                    </td>
+                                    
                                     <td class="py-4 px-4">
                                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
-                                            <?= $borrower['status'] === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' ?>">
+                                            <?= $borrower['status'] === 'Returned' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' ?>">
                                             <i class="fas fa-circle mr-1 text-xs"></i>
                                             <?= ucfirst($borrower['status']) ?>
                                         </span>
                                     </td>
+                                    <td class="py-4 px-4 text-gray-600"><?= date('M j, Y', strtotime($borrower['return_date'])) ?></td>
+                                    
                                     <td class="py-4 px-4">
                                         <div class="flex space-x-2">
                                             <a href="<?= base_url('borrow/view/' . $borrower['borrow_id']); ?>"
