@@ -31,14 +31,14 @@
                 </div>
                 
                 <div class="p-6">
-                    <form>
+                    <form action="<?= base_url('return/return') ?>" method="post">
                         <div class="mb-6">
                             <label for="id" class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-barcode mr-2 text-green-600"></i>Equipment ID
                             </label>
                             <input 
                                 type="number" 
-                                name="id" 
+                                name="equipment_id" 
                                 id="id" 
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
@@ -66,9 +66,8 @@
                                 Back
                             </a>
                             <button 
-                                type="button" 
+                                type="submit" 
                                 class="bg-gradient-to-r from-green-600 to-yellow-500 hover:from-green-700 hover:to-yellow-600 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
-                                onclick="alert('Return functionality would be processed here')"
                             >
                                 <i class="fas fa-undo-alt mr-2"></i>
                                 Return Equipment

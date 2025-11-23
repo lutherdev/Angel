@@ -71,6 +71,7 @@ $routes->get('borrow/delete/(:num)', 'Borrow::delete/$1');
 // ========================RETURN==================================
 $routes->get('/return', 'ReturnItem::returnview');
 $routes->post('/return/equipment', 'ReturnItem::return');
+$routes->post('return/return', 'ReturnItem::returnItem');
 // ========================RESERVE==================================
 
 $routes->get('/reserve', 'Reservation::reserveview');
