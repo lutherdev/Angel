@@ -31,7 +31,7 @@
                 </div>
                 
                 <div class="p-6">
-                    <form>
+                    <form action="<?= base_url('borrow/borrow') ?>" method="post">
 
                     <div class="mb-6">
                         <label for="equipment_id" class="block text-gray-700 text-sm font-medium mb-2">
@@ -62,7 +62,8 @@
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
                                 placeholder="Enter username"
-                            >
+                            />
+
                         </div>
 
                         <div class="mb-6">
@@ -100,9 +101,8 @@
                                 Back
                             </a>
                             <button 
-                                type="button" 
+                                type="submit"
                                 class="bg-green-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
-                                onclick="alert('Borrow functionality would be processed here')"
                             >
                                 <i class="fas fa-hand-holding mr-2"></i>
                                 Process Borrow

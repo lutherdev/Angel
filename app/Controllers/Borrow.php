@@ -5,14 +5,55 @@ namespace App\Controllers;
 class Borrow extends BaseController
 {
 
-    public function borrow(){
-        //implement borrow
-        // get inputs by getpost()
+   public function borrow(){
+        $borrowModel = model('Borrow_model');
+        $equipmentModel = model('Equipments_model');
+        $userModel = model('Users_model');
+
+        $username = $this->request->getPost('username');  // Get username input from form
+        $equipment_id = $this->request->getPost('equipment_id');
+        $quantity = (int)$this->request->getPost('quantity');
+        $borrow_date = $this->request->getPost('borrow_date');
+        $status = "Borrowed";
+
+        // Find user by username
+        $user = $userModel->where('username', $username)->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Username not found.');
+        }
+
+        $user_id = $user['id'];
+
+        $equipment = $equipmentModel->find($equipment_id);
+
+        if ($quantity > $equipment['avail_count']) {
+            return redirect()->back()->with('error', 'Not enough stock available.');
+        }
+
+        $borrowModel->insert([
+            'user_id' => $user_id,
+            'equipment_id' => $equipment_id,
+            'quantity' => $quantity,
+            'borrow_date' => $borrow_date,
+            'status' => $status,
+        ]);
+
+        $equipmentModel->update($equipment_id, [
+            'avail_count' => $equipment['avail_count'] - $quantity
+        ]);
+
+        return redirect()->to('/dashboard')->with('success', 'Borrow successful');
     }
+
+
 
     public function borrowview(){
         $equipmentModel = model('Equipments_model');
+        $userModel = model('Users_model');
+
         $data['equipments'] = $equipmentModel->findAll();
+        $data['users'] = $userModel->findAll();
 
         return view('borrow_view', $data);
     }
