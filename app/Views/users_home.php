@@ -74,23 +74,6 @@
             </div>
 
             <!-- Change Password Card -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <a href="<?php echo base_url('password/change'); ?>" class="text-decoration-none">
-                    <div class="bg-blue-600 p-4 text-white">
-                        <h2 class="text-xl font-bold flex items-center">
-                            <i class="fas fa-key mr-2"></i>
-                            CHANGE PASSWORD
-                        </h2>
-                    </div>
-                    <div class="p-6 flex flex-col items-center text-center h-full">
-                        <div class="bg-blue-100 p-4 rounded-full mb-4">
-                            <i class="fas fa-lock text-blue-600 text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Change Password</h3>
-                        <p class="text-gray-600 mb-6">Update user passwords</p>
-                    </div>
-                </a>
-            </div>
 
             <!-- Activate User Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">

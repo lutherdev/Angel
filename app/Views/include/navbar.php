@@ -52,6 +52,11 @@ $session = session();
             <?php endforeach; ?>
     <?php endif; ?>
     <li class="w-full">
+        <a href="<?= base_url('password/change')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
+            <span>PASSWORD CHANGE</span>
+        </a>
+    </li>
+    <li class="w-full">
         <a href="<?= base_url('auth/logout')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
             <span>LOGOUT</span>
         </a>

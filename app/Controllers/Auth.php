@@ -37,7 +37,6 @@ class Auth extends BaseController
         return view('register');
     }
 
-
     public function register(){
         $usermodel = model('Users_model');
         $session = session();
