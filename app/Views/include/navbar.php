@@ -1,6 +1,7 @@
 <?php 
 $staticPersonnel = ['dashboard', 'users', 'equipments'];
 $staticAssociate = ['dashboard', 'borrow', 'return', 'reserve'];
+$staticStudent = ['dashboard', 'borrow', 'return'];
 $session = session();
 ?>
 <!-- Mobile Menu Button -->
@@ -28,6 +29,7 @@ $session = session();
                 </div>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Information Technology Services Office (ITSO)</p>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Hello, <?= $session->get('username');?> | <?= $session->get('name');?> | <?= $session->get('role');?></p>
+                <a href="<?= base_url('user/profile')?>" class="text-green-200 text-sm mt-2 opacity-90" ><span>PROFILE</span></a>
             </div>
             
             <!-- Navigation Links -->
@@ -51,11 +53,6 @@ $session = session();
         </li>
             <?php endforeach; ?>
     <?php endif; ?>
-    <li class="w-full">
-        <a href="<?= base_url('password/change')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
-            <span>PASSWORD CHANGE</span>
-        </a>
-    </li>
     <li class="w-full">
         <a href="<?= base_url('auth/logout')?>" onclick="setActiveNavItem(this)" class="flex items-center px-4 py-3 rounded-lg text-white transition-colors no-underline w-full hover:bg-green-700">
             <span>LOGOUT</span>

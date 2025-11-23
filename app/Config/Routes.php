@@ -34,6 +34,11 @@ $routes->post('users/update/(:num)', 'Users::update/$1'); //not view
 
 $routes->get('users/delete/(:num)', 'Users::delete/$1');
 
+$routes->get('user/profile', 'Users::profile');
+
+$routes->get('user/deactivate', 'Users::deactview');
+$routes->get('/deactivate', 'Users::deact');
+
 // ========================EQUIPMENTS==================================
 
 $routes->get('equipments', 'Equipments::index'); //view

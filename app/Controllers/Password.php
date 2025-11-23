@@ -134,7 +134,7 @@ class Password extends BaseController{
     $user = $userModel->find($userId);
 
     if (!$user) {
-        return redirect()->back()->with('error', 'User not found.');
+        return redirect()->back()->with('error', 'Loggedin User not found.');
     }
     // check current password
     if (!password_verify($currentPassword, $user['password'])) {

@@ -21,7 +21,7 @@
     <main class="flex-1 p-8">
         <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Reservations Database</h2>
+                <h2 class="text-2xl font-bold text-gray-800">Your Reservations History</h2>
                 <div class="text-sm text-gray-500">
                     Total Reservations: <span class="font-semibold text-blue-600"><?= !empty($reservations) ? count($reservations) : 0 ?></span>
                 </div>
@@ -38,7 +38,6 @@
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Reserved Date</th>
                             <!-- <th class="text-left py-4 px-4 font-semibold text-gray-700">Valid Until</th> -->
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Status</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,31 +83,6 @@
                                             <?= ucfirst($reservation['status']) ?>
                                         </span>
                                     </td>
-                                    <td class="py-4 px-4">
-                                        <div class="flex space-x-2">
-
-                                            <a href="<?= base_url('reservation/view/' . $reservation['reservation_id']); ?>"
-                                                class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
-                                                    <i class="fas fa-eye w-4 h-4"></i>
-                                                </a>
-
-                                            
-                                            <a href="<?= base_url('reservation/edit/' . $reservation['reservation_id']); ?>"
-                                                class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="Edit Details">
-                                                    <i class="fas fa-edit w-4 h-4"></i>
-                                                </a>
-
-                                            
-                                            <a href="<?= base_url('reservation/delete/' . $reservation['reservation_id']); ?>"
-                                                class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="Delete Details">
-                                                    <i class="fas fa-trash w-4 h-4"></i>
-                                                </a>
-
-                                        </div>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -128,7 +102,7 @@
         <!-- Borrowers Section -->
         <div class="bg-white rounded-lg shadow-sm p-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Borrowers Management</h2>
+                <h2 class="text-2xl font-bold text-gray-800">Your Borrow History</h2>
                 <div class="flex space-x-4">
                     <div class="text-sm text-gray-500">
                         Total Borrowers: <span class="font-semibold text-blue-600"><?= !empty($borrowers) ? count($borrowers) : 0 ?></span>
@@ -147,7 +121,6 @@
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Equipment</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Status</th>
                             <th class="text-left py-4 px-4 font-semibold text-gray-700">Return Date</th>
-                            <th class="text-left py-4 px-4 font-semibold text-gray-700">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -182,28 +155,6 @@
                                     </td>
                                     <td class="py-4 px-4 text-gray-600"><?= date('M j, Y', strtotime($borrower['return_date'])) ?></td>
                                     
-                                    <td class="py-4 px-4">
-                                        <div class="flex space-x-2">
-                                            <a href="<?= base_url('borrow/view/' . $borrower['borrow_id']); ?>"
-                                                class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="View Details">
-                                                    <i class="fas fa-eye w-4 h-4"></i>
-                                                </a>
-
-                                            
-                                            <a href="<?= base_url('borrow/edit/' . $borrower['borrow_id']); ?>"
-                                                class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="Edit Details">
-                                                    <i class="fas fa-edit w-4 h-4"></i>
-                                                </a>
-                                            
-                                            <a href="<?= base_url('borrow/delete/' . $borrower['borrow_id']); ?>"
-                                                class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200"
-                                                title="Delete Details">
-                                                    <i class="fas fa-trash w-4 h-4"></i>
-                                                </a>
-                                        </div>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>

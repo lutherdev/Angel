@@ -23,6 +23,15 @@ class Users extends BaseController
         return view('users_home', $data);
     }
 
+    public function profile(){
+        $session = session();
+        $checkses = $session->get('isLoggedIn');
+        if (!$checkses) {
+        return redirect()->to('/login')->with('error', 'Please login first.');
+        }
+        $data = $session->get();
+        return view('user_profile', ['user' => $data]);
+    }
     // public function add() {
     //     return view('users_add');
     // }
@@ -129,6 +138,14 @@ class Users extends BaseController
     } catch (\CodeIgniter\Database\Exceptions\DatabaseException $e) {
         $session->setFlashdata('error', 'Cannot delete this user because they have existing reservations.');
         return redirect()->to('dashboard');
+        }
     }
+
+    public function deactview(){
+        return view('deact_view');
+    }
+
+    public function deact(){
+
     }
 }
