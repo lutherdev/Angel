@@ -42,6 +42,8 @@ class Auth extends BaseController
         $storedHash = $user['password'];               // hash from DB
         if ($user['status'] == 'INACTIVE'){
             return redirect()->to('dashboard')->with('error', 'User deactivated');
+        } elseif ($user['status'] == 'PENDING'){
+            return redirect()->to('dashboard')->with('error', 'Please Verify your Account First.');
         }
         if (password_verify($password, $storedHash)) {
             //SET OTHER ROLES
@@ -120,12 +122,12 @@ class Auth extends BaseController
         $token = $this->createResetToken($user['id']);
         $message = "<h2>Hello, ".$user['first_name'].' ' .$user['last_name'].",</h2><br>
             PLEASE CONFIRM YOUR ACCOUNT BY CLICKING THE LINK BELOW<br>. 
-            ------> <a href=".base_url('user/verify/'.$token).">!!!CLICK THIS LINK!!!</a> <------------
+            ------> <a href=".base_url('auth/verify/'.$token).">!!!CLICK THIS LINK!!!</a> <------------
             <br>From ITSO TEAM";
         $email = service('email');
         $email->setFrom('lutherdeanph2@gmail.com', 'noname');
         $email->setTo($user['email']);
-        $email->setSubject('USER ACCOUNT RESET');
+        $email->setSubject('VERIFY ACCOUNT');
         $email->setMessage($message);
         if(!$email->send()){
             $session->setFlashData('error', $email->printDebugger(['headers', 'subject', 'body']));

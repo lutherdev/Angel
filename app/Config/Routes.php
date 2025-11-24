@@ -20,6 +20,8 @@ $routes->post('auth/register', 'Auth::register');
 
 $routes->get('auth/logout', 'Auth::logout');
 
+$routes->get('auth/verify/(:any)', 'Auth::verify/$1');
+
 // ========================USERS==================================
 
 $routes->get('/users', 'Users::index'); //view leads to user dashboard
