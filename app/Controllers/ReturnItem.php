@@ -20,6 +20,7 @@ class ReturnItem extends BaseController
 
         $equipment_id = $this->request->getPost('equipment_id');
         $username = $this->request->getPost('username');
+        $returndate = $this->request->getPost('return_date');
 
         $user = $userModel->where('username', $username)->first();
 
@@ -30,7 +31,9 @@ class ReturnItem extends BaseController
         $borrowRecord = $borrowModel
             ->where('user_id', $user['id'])
             ->where('equipment_id', $equipment_id)
+            ->where('status', 'BORROWED')
             ->first();
+
 
         if(!$borrowRecord){
             return redirect()->back()->with('error', 'No borrow record found');
@@ -44,9 +47,7 @@ class ReturnItem extends BaseController
         $newAvailCount = $equipment['avail_count'] + $borrowRecord['quantity'];
         $equipmentModel->update($equipment_id, ['avail_count'=>$newAvailCount]);
 
-        $user = $userModel->find($userId);
-
-        $borrowModel->update($borrowRecord['borrow_id'], ['status' => 'Returned']);
+        $borrowModel->update($borrowRecord['borrow_id'], ['status' => 'Returned', 'return_date' => $returndate]);
 
         $message = "<h2>Hello, ".$user['first_name'].' '. $user['last_name'].",</h2><br>
             YOU RETURNED AN ITEM : ".$equipment['name']." with id ".$equipment['id'].". THANK YOU FOR USING OUR SERVICE. <br>

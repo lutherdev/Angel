@@ -29,7 +29,17 @@
                         RETURN EQUIPMENT
                     </h2>
                 </div>
-                
+                <?php if (session()->getFlashdata('success')): ?>
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            <?php endif; ?>
                 <div class="p-6">
                     <form action="<?= base_url('return/return') ?>" method="post">
                         <div class="mb-6">
@@ -57,6 +67,20 @@
                                 required 
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                                 placeholder="Enter Username"
+                            >
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="return_date" class="block text-gray-700 text-sm font-medium mb-2">
+                                <i class="fas fa-calendar-alt mr-2 text-orange-600"></i>Return Date
+                            </label>
+                            <input 
+                                type="date" 
+                                name="return_date" 
+                                id="return_date" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                                value="<?= date('Y-m-d') ?>"
                             >
                         </div>
 

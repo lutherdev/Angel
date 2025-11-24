@@ -26,7 +26,9 @@ class Borrow extends BaseController
         $user_id = $user['id'];
 
         $equipment = $equipmentModel->find($equipment_id);
-
+        if ($equipment['status'] == 'INACTIVE'){
+            return redirect()->back()->with('error', 'THE ITEM IS UNAVAILABLE.');
+        }
         if ($quantity > $equipment['avail_count']) {
             return redirect()->back()->with('error', 'Not enough stock available.');
         }
