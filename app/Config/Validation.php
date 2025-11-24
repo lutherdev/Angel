@@ -44,13 +44,39 @@ class Validation extends BaseConfig
       // Rules for signup
     public array $signup = [
         'username' => 'required|is_unique[tblusers.username]|alpha_numeric',
-        'password' => 'required|min_length[6]|max_length[16]',
-        'email' => 'required|valid_email',
+        'password' => [
+            'rules' => 'required|min_length[6]|max_length[16]|regex_match[/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/]',
+            'errors' => [
+                'regex_match' => 'Password must contain at least one letter, one number, and one special character.'
+            ]
+        ],
+        'email' => 'required|valid_email|is_unique[tblusers.email]',
         //'confirmpassword' => 'matches[password]',
         'firstname' => 'required|alpha_space',
         'middlename' => 'permit_empty|alpha_space',
         'lastname' => 'required|alpha_space',
         'role' => 'required'
+    ];
+
+    public array $resetPassword= [
+        'new_pass' => [
+            'rules' => 'required|min_length[6]|max_length[16]|regex_match[/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).+$/]',
+            'errors' => [
+                'regex_match' => 'Password must contain at least one letter, one number, and one special character.'
+            ]
+        ],
+        'confirm_pass' => 'required|matches[new_pass]'
+    ];
+
+    public array $changePassword= [
+        'current_password' => 'required',
+        'new_pass' => [
+            'rules' => 'required|min_length[6]|max_length[16]|regex_match[/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).+$/]',
+            'errors' => [
+                'regex_match' => 'Password must contain at least one letter, one number, and one special character.'
+            ]
+        ],
+        'confirm_pass' => 'required|matches[new_pass]'
     ];
 
       // Rules for equipments

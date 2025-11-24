@@ -200,5 +200,4 @@ class Reservation extends BaseController{
 
         return redirect()->back()->with('success', 'Reserved item is returned.');
     }
-
 }
