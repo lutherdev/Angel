@@ -29,9 +29,20 @@
                         RESERVE EQUIPMENT
                     </h2>
                 </div>
+                <?php if (session()->getFlashdata('success')): ?>
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            <?php endif; ?>
                 
                 <div class="p-6">
-                    <form>
+                    <form action="<?= base_url('reserve/equipment') ?>" method="post">
                         <div class="mb-6">
                             <label for="id" class="block text-gray-700 text-sm font-medium mb-2">
                                 <i class="fas fa-barcode mr-2 text-purple-600"></i>Equipment ID
@@ -79,9 +90,9 @@
                                 Back
                             </a>
                             <button 
-                                type="button" 
+                                type="submit" 
                                 class="bg-green-900 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium flex items-center transition duration-200 shadow-md hover:shadow-lg"
-                                onclick="alert('Reservation functionality would be processed here')"
+                                
                             >
                                 <i class="fas fa-calendar-plus mr-2"></i>
                                 Create Reservation

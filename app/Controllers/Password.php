@@ -43,7 +43,9 @@ class Password extends BaseController{
         }
         $token = $this->createResetToken($user['id']);
         $message = "<h2>Hello, ".$user['first_name']. $user['last_name'].",</h2><br>
-            TANGINA MO!!!!!. <a href=".base_url('password/reset/'.$token).">Click mo to bilis!</a><br>From LELOUCH";
+            PLEASE CLICK THE LINK BELOW FOR RESET PASSWORD. <br>
+            -------> <a href=".base_url('password/reset/'.$token).">!!!CLICK THIS!!!</a> <-----
+            <br>From LELOUCH";
         $email = service('email');
         $email->setFrom('lutherdeanph2@gmail.com', 'noname');
         $email->setTo($user['email']);
@@ -73,6 +75,16 @@ class Password extends BaseController{
         if (!$tokenData){
             $session->setFlashData('error', 'token doesnt exist!');
             return redirect()->to('/forget');
+        }
+        if (!$tokenData) {
+            $session->setFlashData('error', 'Invalid or expired token.');
+            return redirect()->to('/dashboard');
+        }
+
+        $tokenTime = strtotime($tokenData['created_at']);
+        if (time() - $tokenTime > 3600) {  // 1 hour
+            $session->setFlashData('error', 'Token expired.');
+            return redirect()->to('/dashboard');
         }
 
         if($tokenData['used'] == 1){

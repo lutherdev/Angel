@@ -17,6 +17,48 @@ class Reservation extends BaseController{
         return view('reserve_view');
     }
 
+    public function reserve(){
+        $session = session();
+        $reservationModel = model("Reservation_model");
+        $equipmentModel = model("Equipments_model");
+
+        // Get POST inputs
+        $userId = $session->get('user_id'); // If this is user_id or username, adjust accordingly
+        $equipmentId = $this->request->getPost('id');
+        $reservedDate = $this->request->getPost('reserved_date');
+
+        // Validate required inputs
+        if (!$userId || !$equipmentId || !$reservedDate) {
+            return redirect()->back()->with('error', 'Please fill in all fields.');
+        }
+
+        // Check if equipment exists
+        $equipment = $equipmentModel->find($equipmentId);
+        if (!$equipment) {
+            return redirect()->back()->with('error', 'Equipment not found.');
+        }
+
+        // Check if quantity is available
+        if ($equipment['quantity'] <= 0) {
+            return redirect()->back()->with('error', 'This equipment is currently unavailable.');
+        }
+
+        // Insert into reservations table
+        $reservationModel->insert([
+            'user_id' => $userId,
+            'equipment_id' => $equipmentId,
+            'reserved_date' => $reservedDate,
+            'status' => 'RESERVED'
+        ]);
+
+        // Optionally, you can reduce equipment quantity by 1 if needed
+        // $equipmentModel->update($equipmentId, ['quantity' => $equipment['quantity'] - 1]);
+
+        return redirect()->back()->with('success', 'Equipment successfully reserved.');
+
+        
+    }
+
     public function view($id){
         $reservationModel = model('Reservation_model');
 

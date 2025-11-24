@@ -82,7 +82,7 @@ $routes->post('return/return', 'ReturnItem::returnItem');//FIXXXXXXXXXXXXXXXXXXX
 // ========================RESERVE==================================
 
 $routes->get('/reserve', 'Reservation::reserveview');
-$routes->post('/reserve/equipment', 'Reservation:reserve');
+$routes->post('/reserve/equipment', 'Reservation::reserve');
 
 $routes->get('reservation/view/(:num)', 'Reservation::view/$1');
 
