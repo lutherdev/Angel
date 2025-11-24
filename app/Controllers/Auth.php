@@ -164,6 +164,9 @@ class Auth extends BaseController
         $tokenModel->update($tokenData['id'], ['used' => 1]);
 
         $usermodel->update($tokenData['user_id'], ['status' => 'ACTIVE']);
+
+        $tokenModel->delete($tokenData['id']);
+
         $session->setFlashData('success', 'account verified!');
         return redirect()->to('dashboard');
 
