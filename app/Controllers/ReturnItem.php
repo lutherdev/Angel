@@ -43,7 +43,23 @@ class ReturnItem extends BaseController
 
         $newAvailCount = $equipment['avail_count'] + $borrowRecord['quantity'];
         $equipmentModel->update($equipment_id, ['avail_count'=>$newAvailCount]);
+
+        $user = $userModel->find($userId);
+
         $borrowModel->update($borrowRecord['borrow_id'], ['status' => 'Returned']);
+
+        $message = "<h2>Hello, ".$user['first_name'].' '. $user['last_name'].",</h2><br>
+            YOU RETURNED AN ITEM : ".$equipment['name']." with id ".$equipment['id'].". THANK YOU FOR USING OUR SERVICE. <br>
+            <br>From ITSO TEAM";
+        $email = service('email');
+        $email->setFrom('lutherdeanph2@gmail.com', 'noname');
+        $email->setTo($user['email']);
+        $email->setSubject('RETURN EQUIPMENT');
+        $email->setMessage($message);
+        if(!$email->send()){
+            $session->setFlashData('error', $email->printDebugger(['headers', 'subject', 'body']));
+            return redirect()->to('dashboard');
+        }
 
         return redirect()->to('/dashboard')->with('success', 'Return successful');
     }
