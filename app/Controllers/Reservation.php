@@ -175,7 +175,9 @@ class Reservation extends BaseController{
         }
 
         //implement here plus 1 sa equipment database
-
+        if ($reservation['status'] != 'RELEASED'){
+            return redirect()->back()->with('error', 'Equipment isnt released yet!');
+        }
         if ($reservation['status'] == 'DONE'){
             return redirect()->back()->with('error', 'Equipment is already returned.');
         }
