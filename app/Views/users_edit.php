@@ -67,8 +67,8 @@
                     <div>
                         <label for="status" class="block text-sm font-semibold text-gray-700 mb-2">Status</label>
                         <select id="status" name="status" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                            <option value="Active" <?= (isset($user['status']) && $user['status'] == 'Active') ? 'selected' : ''; ?>>Active</option>
-                            <option value="Inactive" <?= (isset($user['status']) && $user['status'] == 'Inactive') ? 'selected' : ''; ?>>Inactive</option>
+                            <option value="ACTIVE" <?= (isset($user['status']) && $user['status'] == 'ACTIVE') ? 'selected' : ''; ?>>Active</option>
+                            <option value="INACTIVE" <?= (isset($user['status']) && $user['status'] == 'INACTIVE') ? 'selected' : ''; ?>>Inactive</option>
                         </select>
                     </div>
                 </div>

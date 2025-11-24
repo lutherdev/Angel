@@ -10,22 +10,40 @@ class Dashboard extends BaseController
         $itemmodel = model('Equipments_model');
         $reservationmodel = model('Reservation_model');
         $borrowmodel = model('Borrow_model');
-        
+        $userId = session()->get('user_id');
         $data = array(
             'title' => 'TW32 App - View User Record',
             'users' => $usermodel->findAll(),
             'equipments' => $itemmodel->findAll(),
-            'reservations' => $reservationmodel->findAll(),
-            'borrowers' => $borrowmodel->findAll()
-        );
+            'title' => 'TW32 App - View User Record',
+            'reservations' => $reservationmodel
+            ->select('tblreservations.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name as equipment_name')
+            ->join('tblusers', 'tblusers.id = tblreservations.user_id')
+            ->join('tblequipments', 'tblequipments.id = tblreservations.equipment_id')
+            ->findAll(),
 
-        $reservationmodel = model('Reservation_model');
-        $borrowmodel = model('Borrow_model');
+            'borrowers' => $borrowmodel
+            ->select('tblborrow.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name as equipment_name')
+            ->join('tblusers', 'tblusers.id = tblborrow.user_id')
+            ->join('tblequipments', 'tblequipments.id = tblborrow.equipment_id')
+            ->findAll(),
+        );
 
         $data2 = array(
             'title' => 'TW32 App - View User Record',
-            'reservations' => $reservationmodel->findAll(),
-            'borrowers' => $borrowmodel->findAll()
+            'reservations' => $reservationmodel
+            ->select('tblreservations.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name as equipment_name')
+            ->join('tblusers', 'tblusers.id = tblreservations.user_id')
+            ->join('tblequipments', 'tblequipments.id = tblreservations.equipment_id')
+            ->where('tblreservations.user_id', $userId)
+            ->findAll(),
+
+            'borrowers' => $borrowmodel
+            ->select('tblborrow.*, tblusers.username, tblusers.first_name, tblusers.last_name, tblequipments.name as equipment_name')
+            ->join('tblusers', 'tblusers.id = tblborrow.user_id')
+            ->join('tblequipments', 'tblequipments.id = tblborrow.equipment_id')
+            ->where('tblborrow.user_id', $userId)
+            ->findAll(),
         );
 
         if ($role == 'Personnel') {

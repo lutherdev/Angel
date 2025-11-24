@@ -43,7 +43,7 @@
                 </div>
                 <div class="flex space-x-4 mt-8">
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
-                        Update Equipment
+                        Update Status
                     </button>
                     <a href="<?= base_url('dashboard'); ?>" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
                         Cancel

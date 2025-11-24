@@ -29,7 +29,7 @@ $session = session();
                 </div>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Information Technology Services Office (ITSO)</p>
                 <p class="text-green-200 text-sm mt-2 opacity-90">Hello, <?= $session->get('username');?> | <?= $session->get('name');?> | <?= $session->get('role');?></p>
-                <a href="<?= base_url('user/profile')?>" class="text-green-200 text-sm mt-2 opacity-90" ><span>PROFILE</span></a>
+                <a href="<?= base_url('user/profile')?>" class="text-green-400 font-semibold text-sm mt-2 hover:text-green-300 transition" ><span>PROFILE</span></a>
             </div>
             
             <!-- Navigation Links -->
