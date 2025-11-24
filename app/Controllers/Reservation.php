@@ -21,12 +21,15 @@ class Reservation extends BaseController{
         $session = session();
         $reservationModel = model("Reservation_model");
         $equipmentModel = model("Equipments_model");
+        $userModel = model('Users_model');
+        
 
         // Get POST inputs
         $userId = $session->get('user_id'); // If this is user_id or username, adjust accordingly
         $equipmentId = $this->request->getPost('id');
         $reservedDate = $this->request->getPost('reserved_date');
 
+        
         // Validate required inputs
         if (!$userId || !$equipmentId || !$reservedDate) {
             return redirect()->back()->with('error', 'Please fill in all fields.');
@@ -50,9 +53,20 @@ class Reservation extends BaseController{
             'reserved_date' => $reservedDate,
             'status' => 'RESERVED'
         ]);
+        $user = $userModel->find($userId);
 
-        // Optionally, you can reduce equipment quantity by 1 if needed
-        // $equipmentModel->update($equipmentId, ['quantity' => $equipment['quantity'] - 1]);
+        $message = "<h2>Hello, ".$user['first_name'].' '. $user['last_name'].",</h2><br>
+            YOU RESERVED AN ITEM : ".$equipment['name']." with id ".$equipment['id'].". Please Wait for ITSO to Confirm your Reservation. <br>
+            <br>From ITSO TEAM";
+        $email = service('email');
+        $email->setFrom('lutherdeanph2@gmail.com', 'noname');
+        $email->setTo($user['email']);
+        $email->setSubject('RESERVE EQUIPMENT');
+        $email->setMessage($message);
+        if(!$email->send()){
+            $session->setFlashData('error', $email->printDebugger(['headers', 'subject', 'body']));
+            return redirect()->to('dashboard');
+        }
 
         return redirect()->back()->with('success', 'Equipment successfully reserved.');
 
