@@ -115,6 +115,7 @@ class Password extends BaseController{
         //dd($password);
         $usermodel->update($tokenData['user_id'], ['password' => password_hash($password, PASSWORD_DEFAULT)]);
         //$usermodel->update($tokenData['user_id'], ['password' => $password]);
+        $tokenModel->delete($tokenData['id']);
         $session->setFlashData('success', 'password updated!');
         return redirect()->to('password/forget');
 
