@@ -143,13 +143,14 @@
                                     <td class="py-4 px-4">
                                         <?php
                                         $statusColors = [
-                                            'DONE' => 'bg-green-100 text-green-800',
-                                            'RESERVED' => 'bg-yellow-100 text-yellow-800',
-                                            'RESCHEDULED' => 'bg-blue-100 text-blue-800',
-                                            'RELEASED' => 'bg-green-100 text-red-800',
-                                            'CANCELLED' => 'bg-red-100 text-red-800'
+                                            'done' => 'bg-green-100 text-green-800',
+                                            'reserved' => 'bg-yellow-100 text-yellow-800',
+                                            'rescheduled' => 'bg-blue-100 text-blue-800',
+                                            'released' => 'bg-green-100 text-red-800',
+                                            'cancelled' => 'bg-red-100 text-red-800'
                                         ];
-                                        $statusColor = $statusColors[$reservation['status']] ?? 'bg-gray-100 text-gray-800';
+                                        $statusLower = strtolower(trim($reservation['status']));
+                                        $statusColor = $statusColors[$statusLower] ?? 'bg-gray-100 text-gray-800';
                                         ?>
                                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium <?= $statusColor ?>">
                                             <i class="fas fa-circle mr-1 text-xs"></i>
