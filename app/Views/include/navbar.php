@@ -1,5 +1,5 @@
 <?php 
-$staticPersonnel = ['dashboard', 'users', 'equipments'];
+$staticPersonnel = ['dashboard', 'users', 'equipments', 'borrow', 'return', 'reserve'];
 $staticAssociate = ['dashboard', 'borrow', 'return', 'reserve'];
 $staticStudent = ['dashboard', 'borrow', 'return'];
 $session = session();
