@@ -144,7 +144,7 @@
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                     >
                         <option value="">Select role</option>
-                        <option value="Personnel">Personnel</option>
+                        <option value="Personnel">Student</option>
                         <option value="Associate">Associate</option>
                     </select>
                 </div>
