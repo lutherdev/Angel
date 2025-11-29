@@ -18,9 +18,36 @@
             transform: translateY(-5px);
             transition: all 0.3s ease;
         }
+        .modal-hidden {
+            display: none !important;
+        }
+        .modal-visible {
+            display: flex !important;
+        }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
+    <div id="equipmentDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 modal-hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full mx-4">
+            <div class="flex items-center mb-4">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900">Confirm Equipment Deletion</h3>
+            </div>
+            <p id="equipmentDeleteMessage" class="text-gray-600 mb-6">Are you sure you want to delete this equipment? This action cannot be undone.</p>
+            <div class="flex justify-end space-x-3">
+                <button type="button" onclick="hideEquipmentModal()" class="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors rounded-md border border-gray-300 hover:border-gray-400">
+                    Cancel
+                </button>
+                <button type="button" onclick="confirmEquipmentDelete()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+                    Delete Equipment
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
         <!-- Welcome Section -->
@@ -166,6 +193,79 @@
             </div>
         </div>
     </main>
+    <script>
+        let currentUserId = null;
+        let currentEquipmentId = null;
+
+        // User Modal Functions
+        function showModal(userId, username) {
+            currentUserId = userId;
+            const modal = document.getElementById('deleteModal');
+            const message = document.getElementById('deleteMessage');
+            
+            message.textContent = `Are you sure you want to delete user "${username}"? This action cannot be undone.`;
+            modal.classList.remove('modal-hidden');
+            modal.classList.add('modal-visible');
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('deleteModal');
+            modal.classList.remove('modal-visible');
+            modal.classList.add('modal-hidden');
+            currentUserId = null;
+        }
+
+        function confirmDelete() {
+            if (currentUserId) {
+                window.location.href = '<?= base_url('users/delete/') ?>' + currentUserId;
+            }
+        }
+
+        // Equipment Modal Functions
+        function showEquipmentModal(equipmentId, equipmentName) {
+            currentEquipmentId = equipmentId;
+            const modal = document.getElementById('equipmentDeleteModal');
+            const message = document.getElementById('equipmentDeleteMessage');
+            
+            message.textContent = `Are you sure you want to delete equipment "${equipmentName}"? This action cannot be undone.`;
+            modal.classList.remove('modal-hidden');
+            modal.classList.add('modal-visible');
+        }
+
+        function hideEquipmentModal() {
+            const modal = document.getElementById('equipmentDeleteModal');
+            modal.classList.remove('modal-visible');
+            modal.classList.add('modal-hidden');
+            currentEquipmentId = null;
+        }
+
+        function confirmEquipmentDelete() {
+            if (currentEquipmentId) {
+                window.location.href = '<?= base_url('equipments/delete/') ?>' + currentEquipmentId;
+            }
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const userModal = document.getElementById('deleteModal');
+            const equipmentModal = document.getElementById('equipmentDeleteModal');
+            
+            if (event.target === userModal) {
+                hideModal();
+            }
+            if (event.target === equipmentModal) {
+                hideEquipmentModal();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                hideModal();
+                hideEquipmentModal();
+            }
+        });
+    </script>
 </body>
 </html>
 <?= $this->endSection() ?>
