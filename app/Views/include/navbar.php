@@ -28,7 +28,7 @@ $session = session();
         <!-- Logo Container -->
             <div class="flex justify-center mb-4">
                 <div class="logo-container rounded-lg p-2">
-                    <img src="<?= base_url('/public/img/feu_logo1.png') ?>" 
+                    <img src="<?= base_url('/public/img/feu_logo.png') ?>" 
                         alt="ITSO Logo" 
                         class="w-32 h-auto object-contain"
                         width="250" 
