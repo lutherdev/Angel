@@ -42,7 +42,7 @@ class Reservation extends BaseController{
         }
 
         // Check if quantity is available
-        if ($equipment['quantity'] <= 0) {
+        if ($equipment['avail_count'] <= 0) {
             return redirect()->back()->with('error', 'This equipment is currently unavailable.');
         }
 
@@ -145,12 +145,12 @@ class Reservation extends BaseController{
         return redirect()->back()->with('error', 'Item not found.');
     }
 
-    if (($equipment['quantity']-1) < 0) {
+    if (($equipment['avail_count']-1) < 0) {
         return redirect()->back()->with('error', 'Not enough stock to release.');
     }
     
     $equipmentModel->update($reservation['equipment_id'], [
-        'quantity' => ($equipment['quantity']-1),
+        'avail_count' => ($equipment['avail_count']-1),
         'updated_at' => date('Y-m-d H:i:s'),
     ]);
 
@@ -189,7 +189,7 @@ class Reservation extends BaseController{
         }
         
         $equipmentModel->update($reservation['equipment_id'], [
-            'quantity' => ($equipment['quantity']+1),
+            'avail_count' => ($equipment['avail_count']+1),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
