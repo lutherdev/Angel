@@ -39,55 +39,139 @@
                     <?= session()->getFlashdata('error') ?>
                 </div>
             <?php endif; ?>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <!-- Users Total Card -->
+
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Total Users Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <div class="bg-orange-500 p-4 text-white">
+                <div class="bg-yellow-500 p-4 text-white">
                     <h2 class="text-xl font-bold flex items-center">
                         <i class="fas fa-users mr-2"></i>
                         TOTAL USERS
                     </h2>
                 </div>
-
                 <div class="p-6 flex flex-col items-center text-center h-full">
-                    <div class="bg-orange-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-user-friends text-orange-600 text-3xl"></i>
+                    <div class="bg-yellow-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-user-friends text-yellow-600 text-3xl"></i>
                     </div>
-
-                    <!-- Output the total users here -->
                     <h3 class="text-5xl font-bold text-gray-800 mb-2">
                         <?= esc(count($users)) ?>
                     </h3>
-
                     <p class="text-gray-600">Registered users in the system</p>
                 </div>
             </div>
 
+            <!-- Currently Borrowed Card -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                <div class="bg-orange-500 p-4 text-white">
+                <div class="bg-green-500 p-4 text-white">
                     <h2 class="text-xl font-bold flex items-center">
-                        <i class="fas fa-users mr-2"></i>
-                        TOTAL ACTIVE EQUIPMENTS
+                        <i class="fas fa-hand-holding mr-2"></i>
+                        CURRENTLY BORROWED
                     </h2>
                 </div>
-
                 <div class="p-6 flex flex-col items-center text-center h-full">
-                    <div class="bg-orange-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-user-friends text-orange-600 text-3xl"></i>
+                    <div class="bg-green-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-hand-holding text-green-600 text-3xl"></i>
                     </div>
+                    <?php 
+                    // Count currently borrowed items (not returned yet)
+                    $currentlyBorrowed = !empty($borrowers) ? count(array_filter($borrowers, function($borrower) {
+                        return strtoupper($borrower['status']) !== 'RETURNED';
+                    })) : 0;
+                    ?>
+                    <h3 class="text-5xl font-bold text-gray-800 mb-2">
+                        <?= esc($currentlyBorrowed) ?>
+                    </h3>
+                    <p class="text-gray-600">Items currently borrowed</p>
+                </div>
+            </div>
 
-                    <!-- Output the total equipments here here -->
+            <!-- Borrowing History Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-yellow-500 p-4 text-white">
+                    <h2 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-history mr-2"></i>
+                        BORROWING HISTORY
+                    </h2>
+                </div>
+                <div class="p-6 flex flex-col items-center text-center h-full">
+                    <div class="bg-yellow-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-history text-yellow-600 text-3xl"></i>
+                    </div>
+                    <?php 
+                    // Count total borrowing records (you might need to adjust this based on your data structure)
+                    $totalBorrowingHistory = !empty($borrowers) ? count($borrowers) : 0;
+                    ?>
+                    <h3 class="text-5xl font-bold text-gray-800 mb-2">
+                        <?= esc($totalBorrowingHistory) ?>
+                    </h3>
+                    <p class="text-gray-600">Total borrowing records</p>
+                </div>
+            </div>
+
+            <!-- Active Equipments Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-green-500 p-4 text-white">
+                    <h2 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-laptop mr-2"></i>
+                        ACTIVE EQUIPMENTS
+                    </h2>
+                </div>
+                <div class="p-6 flex flex-col items-center text-center h-full">
+                    <div class="bg-green-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-laptop text-green-600 text-3xl"></i>
+                    </div>
                     <?php $activeEquipments = array_filter($equipments, function($item) {
                         return strtoupper($item['status']) === 'ACTIVE';
                     });?>
                     <h3 class="text-5xl font-bold text-gray-800 mb-2">
                         <?= esc(count($activeEquipments)) ?>
                     </h3>
-
-                    <p class="text-gray-600">Active Equipments in the system</p>
+                    <p class="text-gray-600">Active equipments in the system</p>
                 </div>
             </div>
-            
+
+            <!-- Under Maintenance Equipments Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-yellow-500 p-4 text-white">
+                    <h2 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-tools mr-2"></i>
+                        UNDER MAINTENANCE
+                    </h2>
+                </div>
+                <div class="p-6 flex flex-col items-center text-center h-full">
+                    <div class="bg-yellow-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-tools text-yellow-600 text-3xl"></i>
+                    </div>
+                    <?php $maintenanceEquipments = array_filter($equipments, function($item) {
+                        return strtoupper($item['status']) === 'UNDER MAINTENANCE' || 
+                               strtoupper($item['status']) === 'MAINTENANCE' ||
+                               strtoupper($item['status']) === 'REPAIR';
+                    });?>
+                    <h3 class="text-5xl font-bold text-gray-800 mb-2">
+                        <?= esc(count($maintenanceEquipments)) ?>
+                    </h3>
+                    <p class="text-gray-600">Equipments under maintenance</p>
+                </div>
+            </div>
+
+            <!-- Total Equipment Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-green-500 p-4 text-white">
+                    <h2 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-boxes mr-2"></i>
+                        TOTAL EQUIPMENT
+                    </h2>
+                </div>
+                <div class="p-6 flex flex-col items-center text-center h-full">
+                    <div class="bg-green-100 p-4 rounded-full mb-4">
+                        <i class="fas fa-boxes text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold text-gray-800 mb-2">
+                        <?= esc(count($equipments)) ?>
+                    </h3>
+                    <p class="text-gray-600">All equipment in inventory</p>
+                </div>
+            </div>
         </div>
         <!-- DATABASE TABLE -->
         <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
