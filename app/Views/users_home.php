@@ -45,10 +45,6 @@
             <div class="bg-white rounded-xl shadow-sm">
                 <div class="flex justify-between items-center mb-4 bg-green-500 p-4 text-white rounded-xl">
                     <h2 class="text-xl font-bold text-white-800">ITSO Personnel Database</h2>
-                    <button onclick="window.location.href='<?= base_url('users/add') ?>'" 
-                            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors">
-                        Add New User
-                    </button>
                 </div>
                 
                 <div class="overflow-x-auto">
@@ -72,8 +68,8 @@
                                 <td class="py-3 px-4"><?= $user['email']; ?></td>
                                 <td class="py-3 px-4">
                                         <?php 
-                                        $status = $user['status'] ?? 'ACTIVE';
-                                        $statusColor = $status === 'ACTIVE' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+                                        $status = $user['status'] ?? 'Active';
+                                        $statusColor = $status === 'Active' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
                                         ?>
                                         <span class="<?= $statusColor ?>"><?= $status ?></span>
                                     </td>
