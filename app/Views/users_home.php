@@ -99,8 +99,8 @@
                                 <td class="py-3 px-4"><?= $user['email']; ?></td>
                                 <td class="py-3 px-4">
                                         <?php 
-                                        $status = $user['status'] ?? 'Active';
-                                        $statusColor = $status === 'Active' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+                                        $status = $user['status'] ?? 'ACTIVE';
+                                        $statusColor = $status === 'ACTIVE' ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
                                         ?>
                                         <span class="<?= $statusColor ?>"><?= $status ?></span>
                                     </td>
