@@ -72,14 +72,14 @@
 
                         <div class="mb-6">
                             <label for="return_date" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-calendar-alt mr-2 text-orange-600"></i>Return Date
+                                <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Return Date
                             </label>
                             <input 
                                 type="date" 
                                 name="return_date" 
                                 id="return_date" 
                                 required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                                 value="<?= date('Y-m-d') ?>"
                             >
                         </div>

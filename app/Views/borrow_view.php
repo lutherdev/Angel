@@ -63,14 +63,14 @@
 
                     <div class="mb-6">
                             <label for="username" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-user mr-2 text-orange-600"></i>Username
+                                <i class="fas fa-user mr-2 text-green-600"></i>Username
                             </label>
                             <input 
                                 type="text" 
                                 name="username" 
                                 id="username" 
                                 required 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                                 placeholder="Enter username"
                             />
 
@@ -78,7 +78,7 @@
 
                         <div class="mb-6">
                             <label for="quantity" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-boxes mr-2 text-orange-600"></i>Quantity
+                                <i class="fas fa-boxes mr-2 text-green-600"></i>Quantity
                             </label>
                             <input 
                                 type="number" 
@@ -86,21 +86,21 @@
                                 id="quantity" 
                                 required 
                                 min="1"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                                 placeholder="Enter quantity to borrow"
                             >
                         </div>
 
                         <div class="mb-6">
                             <label for="borrow_date" class="block text-gray-700 text-sm font-medium mb-2">
-                                <i class="fas fa-calendar-alt mr-2 text-orange-600"></i>Borrowed Date
+                                <i class="fas fa-calendar-alt mr-2 text-green-600"></i>Borrowed Date
                             </label>
                             <input 
                                 type="date" 
                                 name="borrow_date" 
                                 id="borrow_date" 
                                 required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
                                 value="<?= date('Y-m-d') ?>"
                             >
                         </div>
